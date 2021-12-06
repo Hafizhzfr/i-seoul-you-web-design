@@ -1,27 +1,10 @@
-// import logo from './logo.svg';
 import './App.css';
+import ContactPage from './ContactPage';
 
-const App = function App() {
-  return (
-    <div className="App">
-      <h1>hello world</h1>
-      <h3>list of contact</h3>
-      <ul>
-        <li>
-          John
-          <br />
-          {' '}
-          081220488765
-        </li>
-        <li>
-          Bob
-          <br />
-          {' '}
-          08122048889
-        </li>
-      </ul>
-    </div>
-  );
-};
+const App = () => (
+  <div className="App">
+    <ContactPage />
+  </div>
+);
 
 export default App;
