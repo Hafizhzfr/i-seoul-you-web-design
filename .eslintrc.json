@@ -24,6 +24,7 @@
     "rules": {
         "comma-dangle": ["error", "never"],
         "no-underscore-dangle": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "react/function-component-definition": [2, { "namedComponents": "arrow-function" }]
     }
 }
