@@ -1,10 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import ContactList from './ContactList';
 import ContactForm from './ContactForm';
 import './ContactPage.css';
 
 const ContactPage = () => {
-  const [contacts, setContacts] = React.useState([
+  const [contacts, setContacts] = useState([
     {
       id: 1,
       name: 'John',

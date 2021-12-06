@@ -1,5 +1,5 @@
 import './App.css';
-import ContactPage from './ContactPage';
+import ContactPage from './ContactPage/ContactPage';
 
 const App = () => (
   <div className="App">
