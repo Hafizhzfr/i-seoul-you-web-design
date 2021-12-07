@@ -2,8 +2,9 @@ import React from 'react';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import './ContactPage.css';
+import ContactFilter from './ContactFilter';
 
-const dummyContacts = [
+const CONTACTS = [
   {
     id: 1,
     name: 'John',
@@ -19,8 +20,9 @@ const dummyContacts = [
 export default class ContactPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { contacts: dummyContacts };
+    this.state = { contacts: CONTACTS, filterKeyword: '' };
     this.createContact = this.createContact.bind(this);
+    this.filterChange = this.filterChange.bind(this);
   }
 
   createContact(contact) {
@@ -28,15 +30,29 @@ export default class ContactPage extends React.Component {
     const INCREMENT = 1;
     const generateId = () => contacts.length + INCREMENT;
     const newContact = { ...contact, id: generateId() };
-    this.setState({ contacts: [...contacts, newContact] });
+    this.setState(
+      { contacts: [...contacts, newContact] }
+    );
+  }
+
+  filterChange(event) {
+    this.setState({ filterKeyword: event.target.value.toLowerCase() });
   }
 
   render() {
-    const { contacts } = this.state;
+    const { contacts, filterKeyword } = this.state;
+    let filteredContacts = contacts;
+    if (filterKeyword !== '') {
+      filteredContacts = contacts.filter(
+        (item) => (item.phoneNumber && item.phoneNumber.toLowerCase().includes(filterKeyword))
+          || (item.name && item.name.toLowerCase().includes(filterKeyword))
+      );
+    }
     return (
       <div>
         <ContactForm createContact={this.createContact} />
-        <ContactList data={contacts} />
+        <ContactFilter onChange={this.filterChange} />
+        <ContactList data={filteredContacts} />
       </div>
     );
   }
