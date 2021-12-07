@@ -1,38 +1,90 @@
-.App {
-  text-align: left;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.contact-page {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+form.contact-form, .contact-filter {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.contact-form h2 {
+  text-align: center;
+}
+
+.contact-form label, .contact-filter label {
+  font-weight: 600;
+  height: max-content;
+  overflow: hidden;
+}
+
+input {
+  margin: 5px 0px 15px 0px;
+  box-shadow: 8px 6px 3px #cec1c1;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 10px;
+  font-size: 16px !important;
+}
+
+.contact-form label input, .contact-filter label input {
+  display: block;
+  
+}
+
+.contact-form input[type="submit"] {
+  background-color: #f0db4f;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: #ccb520;
+}
+
+.contact-list {
+  padding: 20px 50px;
+  margin: 10px 25px;
+  background-color: white;
+  box-shadow: 10px 8px 5px #cec1c1;
+  border-radius: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-list h2{
+  margin-bottom: 10px;
+}
+
+.contact-list ul {
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.contact-list ul li {
+  padding: 10px 25px;
+  margin: 10px 0px;
+  font-size: 26px;
+  background-color: #f0db4f;
+  box-shadow: 8px 6px 3px #cec1c1;
+  list-style-position: inside;
+  border-radius: 5px;
+  border-style: solid;
+}
+
+li::marker {
+  content: "📞   ";
+}
+
+span.name{
+  color: #f92672;
+}
+span.phone-number{
+  color: #292d3e;
 }
