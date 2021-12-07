@@ -10,14 +10,14 @@ describe('Contact Page', () => {
     expect(firstListItem).toHaveTextContent('John : 0812');
     expect(secondListItem).toHaveTextContent('Bob : 0814');
   });
-  it('should insert new contact', () => {
+  it('should insert new contact of Johney', () => {
     render(<ContactPage />);
     const [name, phoneNumber] = screen.getAllByRole('textbox');
+    const submitButton = screen.getByRole('button', { name: /submit/i });
+
     userEvent.type(name, 'Johney');
     userEvent.type(phoneNumber, '832230');
-    const submitButton = screen.getByRole('button', { name: /submit/i });
     userEvent.click(submitButton);
-
     const [,, thirdListItem] = screen.getAllByRole('listitem');
 
     expect(thirdListItem).toHaveTextContent('Johney : 832230');
