@@ -3,29 +3,23 @@ import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import './ContactPage.css';
 import ContactFilter from './ContactFilter';
-
-const CONTACTS = [
-  {
-    id: 1,
-    name: 'John',
-    phoneNumber: '0812'
-  },
-  {
-    id: 2,
-    name: 'Bob',
-    phoneNumber: '0814'
-  }
-];
+import { fetchContacts } from './utils';
 
 export default class ContactPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { contacts: CONTACTS, filterKeyword: '' };
-    this.createContact = this.createContact.bind(this);
-    this.filterChange = this.filterChange.bind(this);
+    this.state = {
+      contacts: [],
+      filterKeyword: ''
+    };
   }
 
-  createContact(contact) {
+  async componentDidMount() {
+    const { data } = await fetchContacts();
+    this.setState({ contacts: data });
+  }
+
+  createContact = (contact) => {
     const { contacts } = this.state;
     const INCREMENT = 1;
     const generateId = () => contacts.length + INCREMENT;
@@ -35,7 +29,7 @@ export default class ContactPage extends React.Component {
     );
   }
 
-  filterChange(event) {
+  filterChange = (event) => {
     this.setState({ filterKeyword: event.target.value.toLowerCase() });
   }
 
@@ -44,8 +38,7 @@ export default class ContactPage extends React.Component {
     let filteredContacts = contacts;
     if (filterKeyword !== '') {
       filteredContacts = contacts.filter(
-        (item) => (item.phoneNumber && item.phoneNumber.toLowerCase().includes(filterKeyword))
-          || (item.name && item.name.toLowerCase().includes(filterKeyword))
+        (item) => (item.name?.toLowerCase().includes(filterKeyword))
       );
     }
     return (
