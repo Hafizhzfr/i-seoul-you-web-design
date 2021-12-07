@@ -4,8 +4,8 @@ import ContactItem from './ContactItem';
 const ContactList = (props) => {
   const { data } = props;
   return (
-    <div>
-      <h3>list of contact</h3>
+    <div className="contact-list">
+      <h2>List of Contact</h2>
       <ul>
         {data?.map((contact) => (
           <ContactItem key={contact.id} data={contact} />

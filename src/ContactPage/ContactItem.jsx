@@ -4,11 +4,11 @@ const ContactItem = ({ data }) => {
   const { name, phoneNumber } = data;
   return (
     <li>
-      {name}
+      <span className="name">{name}</span>
       {' '}
       :
       {' '}
-      {phoneNumber}
+      <span className="phone-number">{phoneNumber}</span>
     </li>
 
   );

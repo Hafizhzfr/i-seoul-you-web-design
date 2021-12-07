@@ -15,7 +15,7 @@ export const CONTACTS = [
 ];
 
 const App = () => (
-  <div className="App">
+  <div>
     <ContactPage />
   </div>
 );

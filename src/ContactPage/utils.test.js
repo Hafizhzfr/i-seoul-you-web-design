@@ -3,7 +3,6 @@ import axios from 'axios';
 import { BASE_URL, fetchContacts } from './utils';
 
 jest.mock('axios');
-
 describe('#fetchContacts', () => {
   it('should return contact list when API call is successful', async () => {
     const contacts = [

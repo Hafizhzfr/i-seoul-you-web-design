@@ -62,7 +62,7 @@ describe('Contact Page', () => {
       },
       {
         id: 2,
-        name: 'Baj',
+        name: 'Bob',
         phoneNumber: '0814'
       }
     ];
@@ -71,9 +71,8 @@ describe('Contact Page', () => {
     const filterInput = screen.getByRole('textbox', {
       name: /filter:/i
     });
-    await screen.findAllByRole('listitem');
     userEvent.type(filterInput, 'John');
-    const listContact = screen.getAllByRole('listitem');
+    const listContact = await screen.findAllByRole('listitem');
     const [johnNameAndNumber] = listContact;
 
     expect(listContact).toHaveLength(1);
@@ -98,13 +97,12 @@ describe('Contact Page', () => {
     const filterInput = screen.getByRole('textbox', {
       name: /filter:/i
     });
-    await screen.findAllByRole('listitem');
+
     userEvent.type(filterInput, 'John');
-    const list = screen.getAllByRole('listitem');
+    const list = await screen.findAllByRole('listitem');
     expect(list).toHaveLength(1);
     userEvent.clear(filterInput);
 
-    await screen.findAllByRole('listitem');
     const erasedFilterList = screen.getAllByRole('listitem');
     expect(erasedFilterList).toHaveLength(2);
   });
