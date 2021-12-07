@@ -9,6 +9,7 @@
         "airbnb",
         "plugin:react/jsx-runtime"
     ],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
