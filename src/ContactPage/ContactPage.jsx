@@ -42,7 +42,7 @@ const ContactPage = () => {
     <div className="contact-page">
       <ContactForm createContact={createContact} />
       <ContactFilter onChange={filterChange} />
-      <ContactList data={filteredContacts} />
+      <ContactList data={filteredContacts} title="List of contact :" />
     </div>
   );
 };
