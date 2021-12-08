@@ -10,11 +10,9 @@ const ContactPage = () => {
   const [filterKeyword, setFilterKeyword] = useState('');
   const [isSuccess, setIsSuccess] = useState(true);
 
-  const createContact = (contact) => {
-    const INCREMENT = 1;
-    const generateId = () => contacts.length + INCREMENT;
-    const newContact = { ...contact, id: generateId };
-    setContacts([...contacts, newContact]);
+  const createContact = async (contact) => {
+    const { data } = await axios.post('http://localhost:3001/contacts', contact);
+    setContacts([...contacts, data]);
   };
 
   const filterChange = (event) => {

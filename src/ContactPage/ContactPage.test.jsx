@@ -32,19 +32,6 @@ describe('Contact Page', () => {
     expect(firstListItem).toHaveTextContent('John : 0812');
     expect(secondListItem).toHaveTextContent('Bob : 0814');
   });
-  it('should insert new contact of Johney', async () => {
-    mockAndRender();
-    const [name, phoneNumber] = screen.getAllByRole('textbox');
-    const submitButton = screen.getByRole('button', { name: /submit/i });
-    await screen.findAllByRole('listitem');
-
-    userEvent.type(name, 'Johney');
-    userEvent.type(phoneNumber, '832230');
-    userEvent.click(submitButton);
-    const [,, thirdListItem] = screen.getAllByRole('listitem');
-
-    expect(thirdListItem).toHaveTextContent('Johney : 832230');
-  });
   it('should not insert contact when name and phone number is empty', async () => {
     mockAndRender();
     const submitButton = screen.getByRole('button', { name: /submit/i });
@@ -92,5 +79,52 @@ describe('Contact Page', () => {
     const errorMessage = await screen.findByText(/Server Is Under Maintain/i);
 
     expect(errorMessage).toBeInTheDocument();
+  });
+});
+
+describe('#createContact', () => {
+  const contacts = [
+    {
+      id: 1,
+      name: 'John',
+      phoneNumber: '0812'
+    },
+    {
+      id: 2,
+      name: 'Bob',
+      phoneNumber: '0814'
+    }
+  ];
+  it('should add data to db.json and in the interface', async () => {
+    const data = {
+      data: contacts
+    };
+    const newContact = {
+      name: 'James',
+      phoneNumber: '123123'
+    };
+    when(axios.get).calledWith('http://localhost:3001/contacts').mockResolvedValueOnce(data);
+    render(<ContactPage />);
+    await screen.findAllByRole('listitem');
+    when(axios.post).calledWith('http://localhost:3001/contacts', newContact).mockResolvedValueOnce({
+      data: { ...newContact, id: 3 }
+    });
+    const nameInput = screen.getByRole('textbox', {
+      name: /name/i
+    });
+    const phoneNumberInput = screen.getByRole('textbox', {
+      name: /phone number/i
+    });
+    const submitButton = screen.getByRole('button', {
+      name: /submit/i
+    });
+
+    userEvent.type(nameInput, 'James');
+    userEvent.type(phoneNumberInput, '123123');
+    userEvent.click(submitButton);
+    await screen.findAllByRole('listitem');
+    const [,, james] = screen.getAllByRole('listitem');
+
+    expect(james).toHaveTextContent('James : 123123');
   });
 });

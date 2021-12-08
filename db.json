@@ -1,14 +1,24 @@
 {
-    "contacts": [
-        {
-            "id": 1,
-            "name": "John",
-            "phoneNumber": "0812"
-        },
-        {
-            "id": 2,
-            "name": "Bob",
-            "phoneNumber": "0814"
-        }
-    ]
+  "contacts": [
+    {
+      "id": 1,
+      "name": "John",
+      "phoneNumber": "0812"
+    },
+    {
+      "id": 2,
+      "name": "Bob",
+      "phoneNumber": "0814"
+    },
+    {
+      "name": "Siti Badriah",
+      "phoneNumber": "12413423",
+      "id": 3
+    },
+    {
+      "name": "Nevalen Aginda ",
+      "phoneNumber": "234902123",
+      "id": 4
+    }
+  ]
 }
