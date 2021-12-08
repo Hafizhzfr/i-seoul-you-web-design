@@ -9,7 +9,8 @@ const ContactPage = () => {
   const [filterKeyword, setFilterKeyword] = useState('');
 
   const createContact = (contact) => {
-    const generateId = Math.random() * 101;
+    const INCREMENT = 1;
+    const generateId = () => contacts.length + INCREMENT;
     const newContact = { ...contact, id: generateId };
     setContacts([...contacts, newContact]);
   };
