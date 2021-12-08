@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import ContactFilter from './ContactFilter';
-import { fetchContacts } from './utils';
+import ErrorMessage from './ErrorMessage';
 
 const ContactPage = () => {
   const [contacts, setContacts] = useState([]);
   const [filterKeyword, setFilterKeyword] = useState('');
+  const [isSuccess, setIsSuccess] = useState(true);
 
   const createContact = (contact) => {
     const INCREMENT = 1;
@@ -20,8 +22,12 @@ const ContactPage = () => {
   };
 
   useEffect(async () => {
-    const { data } = await fetchContacts();
-    setContacts(data);
+    try {
+      const { data } = await axios.get('http://localhost:3001/contacts');
+      setContacts(data);
+    } catch (error) {
+      setIsSuccess(false);
+    }
   }, []);
 
   let filteredContacts = contacts;
@@ -31,6 +37,9 @@ const ContactPage = () => {
     );
   }
 
+  if (!isSuccess) {
+    return <ErrorMessage />;
+  }
   return (
     <div className="contact-page">
       <ContactForm createContact={createContact} />

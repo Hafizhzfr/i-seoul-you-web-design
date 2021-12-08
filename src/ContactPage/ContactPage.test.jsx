@@ -5,47 +5,35 @@ import { when } from 'jest-when';
 import ContactPage from './ContactPage';
 
 jest.mock('axios');
-describe('Contact Page', () => {
-  it('should show John in list', async () => {
-    const contacts = {
-      data: [
-        {
-          id: 1,
-          name: 'John',
-          phoneNumber: '0812'
-        },
-        {
-          id: 2,
-          name: 'Bob',
-          phoneNumber: '0814'
-        }
-      ]
-    };
-    when(axios.get).calledWith('http://localhost:3001/contacts').mockResolvedValueOnce(contacts);
+const mockAndRender = () => {
+  const contacts = {
+    data: [
+      {
+        id: 1,
+        name: 'John',
+        phoneNumber: '0812'
+      },
+      {
+        id: 2,
+        name: 'Bob',
+        phoneNumber: '0814'
+      }
+    ]
+  };
+  when(axios.get).calledWith('http://localhost:3001/contacts').mockResolvedValueOnce(contacts);
+  render(<ContactPage />);
+};
 
-    render(<ContactPage />);
+describe('Contact Page', () => {
+  it('should render list contact', async () => {
+    mockAndRender();
     const [firstListItem, secondListItem] = await screen.findAllByRole('listitem');
 
     expect(firstListItem).toHaveTextContent('John : 0812');
     expect(secondListItem).toHaveTextContent('Bob : 0814');
   });
   it('should insert new contact of Johney', async () => {
-    const contacts = {
-      data: [
-        {
-          id: 1,
-          name: 'John',
-          phoneNumber: '0812'
-        },
-        {
-          id: 2,
-          name: 'Bob',
-          phoneNumber: '0814'
-        }
-      ]
-    };
-    when(axios.get).calledWith('http://localhost:3001/contacts').mockResolvedValueOnce(contacts);
-    render(<ContactPage />);
+    mockAndRender();
     const [name, phoneNumber] = screen.getAllByRole('textbox');
     const submitButton = screen.getByRole('button', { name: /submit/i });
     await screen.findAllByRole('listitem');
@@ -58,22 +46,7 @@ describe('Contact Page', () => {
     expect(thirdListItem).toHaveTextContent('Johney : 832230');
   });
   it('should not insert contact when name and phone number is empty', async () => {
-    const contacts = {
-      data: [
-        {
-          id: 1,
-          name: 'John',
-          phoneNumber: '0812'
-        },
-        {
-          id: 2,
-          name: 'Bob',
-          phoneNumber: '0814'
-        }
-      ]
-    };
-    when(axios.get).calledWith('http://localhost:3001/contacts').mockResolvedValueOnce(contacts);
-    render(<ContactPage />);
+    mockAndRender();
     const submitButton = screen.getByRole('button', { name: /submit/i });
     await screen.findAllByRole('listitem');
 
@@ -84,22 +57,7 @@ describe('Contact Page', () => {
   });
 
   it('should show filtered contacts based on name', async () => {
-    const contacts = {
-      data: [
-        {
-          id: 1,
-          name: 'John',
-          phoneNumber: '0812'
-        },
-        {
-          id: 2,
-          name: 'Bob',
-          phoneNumber: '0814'
-        }
-      ]
-    };
-    when(axios.get).calledWith('http://localhost:3001/contacts').mockResolvedValueOnce(contacts);
-    render(<ContactPage />);
+    mockAndRender();
     const filterInput = screen.getByRole('textbox', {
       name: /filter:/i
     });
@@ -113,22 +71,7 @@ describe('Contact Page', () => {
   });
 
   it('should show initial contacts when filter is erased', async () => {
-    const contacts = {
-      data: [
-        {
-          id: 1,
-          name: 'John',
-          phoneNumber: '0812'
-        },
-        {
-          id: 2,
-          name: 'Bob',
-          phoneNumber: '0814'
-        }
-      ]
-    };
-    when(axios.get).calledWith('http://localhost:3001/contacts').mockResolvedValueOnce(contacts);
-    render(<ContactPage />);
+    mockAndRender();
     const filterInput = screen.getByRole('textbox', {
       name: /filter:/i
     });
@@ -140,5 +83,14 @@ describe('Contact Page', () => {
     const erasedFilterList = screen.getAllByRole('listitem');
 
     expect(erasedFilterList).toHaveLength(2);
+  });
+
+  it('should return error when failed fetch contact', async () => {
+    when(axios.get).calledWith('http://localhost:3001/contacts').mockRejectedValue();
+
+    render(<ContactPage />);
+    const errorMessage = await screen.findByText(/Server Is Under Maintain/i);
+
+    expect(errorMessage).toBeInTheDocument();
   });
 });

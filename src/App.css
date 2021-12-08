@@ -36,7 +36,7 @@ input {
 
 .contact-form label input, .contact-filter label input {
   display: block;
-  
+
 }
 
 .contact-form input[type="submit"] {
@@ -58,7 +58,7 @@ input {
   flex-direction: column;
 }
 
-.contact-list h2{
+.contact-list h2 {
   margin-bottom: 10px;
 }
 
@@ -82,9 +82,17 @@ li::marker {
   content: "📞   ";
 }
 
-span.name{
+span.name {
   color: #f92672;
 }
-span.phone-number{
+
+span.phone-number {
   color: #292d3e;
+}
+
+.error-message {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
