@@ -45,15 +45,14 @@ const ContactPage = () => {
       <ContactFilter onChange={filterChange} />
       <div className="contact-list">
         <h2>List of Contact</h2>
-        <ul>
-          {/* ctrl + space for hint */}
-          <ElementList
-            data={filteredContacts}
-            render={(data) => (
-              <ContactItem key={data.id} data={data} />
-            )}
-          />
-        </ul>
+        {/* ctrl + space for hint */}
+        <ElementList
+          data={filteredContacts} // what do u want to render
+          renderItem={(data) => ( // how u render it
+            <ContactItem data={data} />
+          )}
+          keyExtractor={(data) => data.id}
+        />
       </div>
     </div>
   );

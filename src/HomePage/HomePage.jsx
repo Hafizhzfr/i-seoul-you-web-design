@@ -17,10 +17,11 @@ const HomePage = () => {
       <h1>Hello Trainess</h1>
       <h3>you recently added:</h3>
       <ElementList
-        data={lastContacts}
-        render={(data) => (
-          <ContactItem key={data.id} data={data} />
+        data={lastContacts} // what do u want to render
+        renderItem={(data) => ( // how u render it
+          <ContactItem data={data} />
         )}
+        keyExtractor={(data) => data.id}
       />
     </div>
   );
