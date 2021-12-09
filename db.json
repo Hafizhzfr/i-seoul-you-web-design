@@ -35,6 +35,16 @@
       "phoneNumber": "0812345",
       "id": 6,
       "address": "BSD"
+    },
+    {
+      "name": "Hafizh Irfan Zufar",
+      "phoneNumber": "2892340928",
+      "id": 7
+    },
+    {
+      "name": "Lebron james",
+      "phoneNumber": "0921840923",
+      "id": 8
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
 import axios from 'axios';
 import { when } from 'jest-when';
 import ContactPage from './ContactPage';
@@ -21,7 +22,11 @@ const mockAndRender = () => {
     ]
   };
   when(axios.get).calledWith('http://localhost:3001/contacts').mockResolvedValueOnce(contacts);
-  render(<ContactPage />);
+  render(
+    <MemoryRouter>
+      <ContactPage />
+    </MemoryRouter>
+  );
 };
 
 describe('Contact Page', () => {
@@ -75,7 +80,11 @@ describe('Contact Page', () => {
   it('should return error when failed fetch contact', async () => {
     when(axios.get).calledWith('http://localhost:3001/contacts').mockRejectedValue();
 
-    render(<ContactPage />);
+    render(
+      <MemoryRouter>
+        <ContactPage />
+      </MemoryRouter>
+    );
     const errorMessage = await screen.findByText(/Server Is Under Maintain/i);
 
     expect(errorMessage).toBeInTheDocument();
@@ -104,7 +113,11 @@ describe('#createContact', () => {
       phoneNumber: '123123'
     };
     when(axios.get).calledWith('http://localhost:3001/contacts').mockResolvedValueOnce(data);
-    render(<ContactPage />);
+    render(
+      <MemoryRouter>
+        <ContactPage />
+      </MemoryRouter>
+    );
     await screen.findAllByRole('listitem');
     when(axios.post).calledWith('http://localhost:3001/contacts', newContact).mockResolvedValueOnce({
       data: { ...newContact, id: 3 }
@@ -126,5 +139,22 @@ describe('#createContact', () => {
     const [,, james] = screen.getAllByRole('listitem');
 
     expect(james).toHaveTextContent('James : 123123');
+  });
+
+  it('should show John address', async () => {
+    const johnDetail = {
+      id: 1,
+      name: 'John',
+      phoneNumber: '0812',
+      address: 'Cikini'
+    };
+    when(axios.get).calledWith('http://localhost:3001/contacts/1').mockResolvedValueOnce({ data: johnDetail });
+    mockAndRender();
+    await screen.findAllByRole('listitem');
+    const [firstContactButton] = screen.getAllByRole('button', { name: /Detail/i });
+    userEvent.click(firstContactButton);
+    const contactAddress = await screen.findByText(/Cikini/i);
+
+    expect(contactAddress).toBeInTheDocument();
   });
 });

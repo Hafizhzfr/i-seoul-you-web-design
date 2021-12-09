@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
-const ContactItem = ({ data }) => {
+const ContactItem = (props) => { // ini namanya props
+  const { data, onClick } = props;
   const { id, name, phoneNumber } = data;
 
   return (
@@ -11,7 +11,10 @@ const ContactItem = ({ data }) => {
       :
       {' '}
       <span className="phone-number">{phoneNumber}</span>
-      <Link to={`/contact/${id}`}>Detail</Link>
+      <button type="button" onClick={() => onClick(id)}>Detail</button>
+      {/* 'Detail' --> name */}
+      {/* {} dibutuhkan karna kita ingin mengakses variable didalam komponen */}
+      {/* ()  */}
     </>
   );
 };
@@ -22,7 +25,11 @@ ContactItem.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     phoneNumber: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  onClick: PropTypes.func
 };
 
+ContactItem.defaultProps = {
+  onClick: undefined
+};
 export default ContactItem;

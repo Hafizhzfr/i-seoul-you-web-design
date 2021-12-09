@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import ElementList from '../Components/ElementList';
 import ContactFilter from './ContactFilter';
 import ContactForm from './ContactForm';
@@ -12,6 +13,7 @@ const ContactPage = () => {
   const [contacts, setContacts] = useState([]);
   const [filterKeyword, setFilterKeyword] = useState('');
   const [isSuccess, setIsSuccess] = useState(true);
+  const navigate = useNavigate();
 
   const createContact = async (contact) => {
     const { data } = await axios.post('http://localhost:3001/contacts', contact);
@@ -31,13 +33,16 @@ const ContactPage = () => {
     }
   }, []);
 
+  const onClickHandler = (id) => {
+    navigate(`${id}`);
+  };
+
   let filteredContacts = contacts;
   if (filterKeyword !== '') {
     filteredContacts = contacts.filter(
       (item) => (item.name?.toLowerCase().includes(filterKeyword))
     );
   }
-
   if (!isSuccess) {
     return <ErrorMessage />;
   }
@@ -51,10 +56,11 @@ const ContactPage = () => {
       <div className="contact-list">
         <h2>List of Contact</h2>
         {/* ctrl + space for hint */}
-        <ElementList
+        <ElementList // props dari elementList adalah data dan renderItem
           data={filteredContacts} // what do u want to render
           renderItem={(data) => ( // how u render it
-            <ContactItem data={data} />
+            <ContactItem data={data} onClick={(onClickHandler)} />
+            // props dari contact item adalah data dan onclick
           )}
           keyExtractor={(data) => data.id}
         />
