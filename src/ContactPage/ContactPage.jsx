@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
 import axios from 'axios';
-import ContactForm from './ContactForm';
-import ContactList from './ContactList';
+import { useEffect, useState } from 'react';
+import ElementList from '../Components/ElementList';
 import ContactFilter from './ContactFilter';
+import ContactForm from './ContactForm';
+import ContactItem from './ContactItem';
 import ErrorMessage from './ErrorMessage';
 
 const ContactPage = () => {
@@ -42,7 +43,18 @@ const ContactPage = () => {
     <div className="contact-page">
       <ContactForm createContact={createContact} />
       <ContactFilter onChange={filterChange} />
-      <ContactList data={filteredContacts} title="List of contact :" />
+      <div className="contact-list">
+        <h2>List of Contact</h2>
+        <ul>
+          {/* ctrl + space for hint */}
+          <ElementList
+            data={filteredContacts}
+            render={(data) => (
+              <ContactItem key={data.id} data={data} />
+            )}
+          />
+        </ul>
+      </div>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import ContactList from '../ContactPage/ContactList';
+import ElementList from '../Components/ElementList';
+import ContactItem from '../ContactPage/ContactItem';
+import './HomePage.css';
 
 const HomePage = () => {
   const [lastContacts, setLastContacts] = useState([]);
@@ -13,7 +15,13 @@ const HomePage = () => {
   return (
     <div className="home-page">
       <h1>Hello Trainess</h1>
-      <ContactList data={lastContacts} title="You recently added :" />
+      <h3>you recently added:</h3>
+      <ElementList
+        data={lastContacts}
+        render={(data) => (
+          <ContactItem key={data.id} data={data} />
+        )}
+      />
     </div>
   );
 };
