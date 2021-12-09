@@ -1,15 +1,18 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import ElementList from '../Components/ElementList';
 import ContactFilter from './ContactFilter';
 import ContactForm from './ContactForm';
 import ContactItem from './ContactItem';
 import ErrorMessage from './ErrorMessage';
+import ContactDetail from './ContactDetail';
 
 const ContactPage = () => {
   const [contacts, setContacts] = useState([]);
   const [filterKeyword, setFilterKeyword] = useState('');
   const [isSuccess, setIsSuccess] = useState(true);
+  const { id } = useParams();
 
   const createContact = async (contact) => {
     const { data } = await axios.post('http://localhost:3001/contacts', contact);
@@ -43,6 +46,7 @@ const ContactPage = () => {
     <div className="contact-page" data-testid="contact-page">
       <ContactForm createContact={createContact} />
       <ContactFilter onChange={filterChange} />
+      {id && <ContactDetail />}
       <div className="contact-list">
         <h2>List of Contact</h2>
         {/* ctrl + space for hint */}

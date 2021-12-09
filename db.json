@@ -3,27 +3,37 @@
     {
       "id": 1,
       "name": "John",
-      "phoneNumber": "0812"
+      "phoneNumber": "0812",
+      "address": "Jonggol"
     },
     {
       "id": 2,
       "name": "Bob",
-      "phoneNumber": "0814"
+      "phoneNumber": "0814",
+      "address": "Jonggol"
     },
     {
       "name": "Siti Badriah",
       "phoneNumber": "12413423",
-      "id": 3
+      "id": 3,
+      "address": "Jonggol"
     },
     {
       "name": "Nevalen Aginda ",
       "phoneNumber": "234902123",
-      "id": 4
+      "id": 4,
+      "address": "Jonggol"
     },
     {
       "name": "Fandy Kuncoro",
       "phoneNumber": "1039112",
-      "id": 5
+      "id": 5,
+      "address": "Jonggol"
+    },
+    {
+      "name": "Hafizh",
+      "phoneNumber": "0812345",
+      "id": 6
     }
   ]
 }
