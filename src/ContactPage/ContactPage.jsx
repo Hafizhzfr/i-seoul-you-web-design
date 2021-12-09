@@ -40,7 +40,7 @@ const ContactPage = () => {
     return <ErrorMessage />;
   }
   return (
-    <div className="contact-page">
+    <div className="contact-page" data-testid="contact-page">
       <ContactForm createContact={createContact} />
       <ContactFilter onChange={filterChange} />
       <div className="contact-list">

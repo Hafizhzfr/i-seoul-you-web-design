@@ -13,7 +13,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="home-page">
+    <div className="home-page" data-testid="home-page">
       <h1>Hello Trainess</h1>
       <h3>you recently added:</h3>
       <ElementList
