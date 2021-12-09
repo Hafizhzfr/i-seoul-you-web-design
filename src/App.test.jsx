@@ -36,4 +36,22 @@ describe('App', () => {
     expect(contactPage).toBeInTheDocument();
     expect(homePage).not.toBeInTheDocument();
   });
+
+  it('should render HomePage when user click Home link', async () => {
+    render(
+      <MemoryRouter initialEntries={['/contact']}>
+        <App />
+      </MemoryRouter>
+    );
+    await screen.findAllByRole('listitem');
+    const [, homeLink] = screen.getAllByRole('link');
+
+    userEvent.click(homeLink);
+    await screen.findAllByRole('listitem');
+    const contactPage = screen.queryByTestId('contact-page');
+    const homePage = screen.queryByTestId('home-page');
+
+    expect(homePage).toBeInTheDocument();
+    expect(contactPage).not.toBeInTheDocument();
+  });
 });
