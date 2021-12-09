@@ -9,7 +9,7 @@ const ContactDetail = () => {
   useEffect(async () => {
     const { data } = await axios.get(`http://localhost:3001/contacts/${id}`);
     setContact(data);
-  }, [id]);
+  }, [id]); // kalau gapake id, data yang kepanggil db cuma sekali dalam 1 render
 
   return (
     <div data-testid="detail-page">

@@ -33,7 +33,8 @@
     {
       "name": "Hafizh",
       "phoneNumber": "0812345",
-      "id": 6
+      "id": 6,
+      "address": "BSD"
     }
   ]
 }
