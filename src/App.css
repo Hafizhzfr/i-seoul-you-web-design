@@ -1,123 +1,30 @@
-.contact-page {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  width: 100%;
-  height: 100vh;
+body {
+  font-family:'helvetica';
 }
 
-.navbar {
-  background-color: rgb(70, 66, 66);
-  display: flex;
-  justify-content: center;
-  column-gap: 100px;
+.navbar{
+    background-color: rgb(56, 56, 56);
+    height: 45px;
 }
 
-.link-text {
-  color: whitesmoke;
-  font-size: 30px;
-  text-decoration: none;
-  padding: 10px 0;
+.navbar .link-text{
+    color: aqua;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    display: block;
+    float: right;
+    padding: 14px;
 }
 
-.link-text:hover {
-  color: #1be960;
-  transition-duration: 0.5s;
+.navbar .nav-text{
+    margin-right: 20px;
 }
 
-form.contact-form,
-.contact-filter {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  height: max-content;
-}
-
-.contact-form h2 {
-  text-align: center;
-}
-
-.contact-form label,
-.contact-filter label {
-  font-weight: 600;
-  height: max-content;
-  overflow: hidden;
-}
-
-input {
-  margin: 5px 0px 15px 0px;
-  box-shadow: 8px 6px 3px #cec1c1;
-  width: 100%;
-  height: 40px;
-  border-radius: 5px;
-  padding-left: 10px;
-  font-size: 16px !important;
-}
-
-.contact-form label input,
-.contact-filter label input {
-  display: block;
-}
-
-.contact-form input[type="submit"] {
-  background-color: #f0db4f;
-}
-
-.contact-form input[type="submit"]:hover {
-  background-color: #ccb520;
-}
-
-.contact-list {
-  padding: 20px 50px;
-  margin: 10px 25px;
-  background-color: white;
-  box-shadow: 10px 8px 5px #cec1c1;
-  border-radius: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-list h2 {
-  margin-bottom: 10px;
-}
-
-.contact-list ul {
-  flex-grow: 1;
-  overflow-y: auto;
-}
-
-.contact-list ul li {
-  padding: 10px 25px;
-  margin: 10px 0px;
-  font-size: 26px;
-  background-color: #f0db4f;
-  box-shadow: 8px 6px 3px #cec1c1;
-  list-style-position: inside;
-  border-radius: 5px;
-  border-style: solid;
-}
-
-li::marker {
-  content: "📞   ";
-}
-
-span.name {
-  color: #f92672;
-}
-
-span.phone-number {
-  color: #292d3e;
-}
-
-.error-message {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.home-page h1 {
-  margin: 30px 30px;
+.navbar .link-text:hover{
+    color: rgb(56, 56, 56);
+    font-weight: bold;
+    background-color: aqua;
+    transition: .2s;
+    
 }

@@ -1,0 +1,33 @@
+.button-count{
+    text-align: center;
+    margin:0 auto;
+    display:block;
+    background-color: rgb(31,31,31);
+    border: 2px solid aqua;
+    color: aqua;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: large;
+    transition: .2s;
+}
+
+.button-count:hover{
+    background-color: aqua;
+    color: rgb(31,31,31);
+    transition: .2s;
+}
+
+.sentence{
+    position: relative;
+    text-align: center;
+    margin-top: 20%;
+    font-size: 25px;
+}
+
+.result-button{
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+}

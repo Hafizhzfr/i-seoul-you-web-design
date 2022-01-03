@@ -1,0 +1,22 @@
+.cv-input-container{
+    display:grid;
+}
+
+.cv-button{
+    text-align: center;
+    display:block;
+    background-color: rgb(31,31,31);
+    border: 2px solid aqua;
+    color: aqua;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: large;
+    transition: .2s;
+}
+
+.cv-button:hover{
+    background-color: aqua;
+    color: rgb(31,31,31);
+    transition: .2s;
+}

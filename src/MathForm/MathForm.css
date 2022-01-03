@@ -1,0 +1,71 @@
+body{
+    background-color: rgb(31, 31, 31);
+    color: aqua;
+}
+
+.title{
+    position: relative;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.operation-select{
+    margin:0 auto;
+    display:block;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    background-color:rgb(31, 31, 31) ;
+    border-radius: 10px;
+    border-color: aqua;
+    border-width: 2px;
+    color: aqua;
+}
+
+.input-label{
+    font-size: 25px;
+    text-align: center;
+}
+
+.input-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 300px;
+}
+
+.input-container input[type=text]{
+    text-align: center;
+    font-size: 25px;
+    color: aqua;
+    width: 90%;
+    margin: 8px 0;
+    border: 1px solid aqua;
+    background-color: rgb(31,31,31);
+    border-radius: 4px;
+}
+.button-math{
+    text-align: center;
+    margin:0 auto;
+    display:block;
+    background-color: rgb(31,31,31);
+    border: 2px solid aqua;
+    color: aqua;
+    height: 40px;
+    width: 150px;
+    border-radius: 10px;
+    font-size: large;
+    transition: .2s;
+}
+
+.button-math:hover{
+    background-color: aqua;
+    color: rgb(31,31,31);
+    transition: .2s;
+}
+
+.result{
+    position: relative;
+    text-align: center;
+    margin-top: 70px;
+    font-size: 25px;
+}
