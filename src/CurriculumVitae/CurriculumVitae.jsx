@@ -6,11 +6,11 @@ const CurriculumVitae = () => {
   const [candidate, setCandidate] = useState({
     name: '', education: '', address: '', phone: '', graduate: '', experiences: []
   });
-  const [name, setName] = useState('Hafizh');
-  const [education, setEducation] = useState('UI');
-  const [address, setAddress] = useState('London');
-  const [phone, setPhone] = useState('081384866939');
-  const [graduate, setGraduate] = useState('2020');
+  const [name, setName] = useState('');
+  const [education, setEducation] = useState('');
+  const [address, setAddress] = useState('');
+  const [phone, setPhone] = useState('');
+  const [graduate, setGraduate] = useState('');
   const [experiences, setExperiences] = useState([{
     company: '', role: '', start: '', end: ''
   }]);
@@ -69,6 +69,7 @@ const CurriculumVitae = () => {
     setExperiences([...experiences, {
       company: '', role: '', start: '', end: ''
     }]);
+    setDisabledButton(true);
   };
 
   const handleSubmit = () => {
