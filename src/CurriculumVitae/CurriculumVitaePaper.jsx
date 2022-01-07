@@ -2,40 +2,93 @@ import PropTypes from 'prop-types';
 
 const CurriculumVitaePaper = ({ candidate }) => {
   const {
-    name, education, address, phone, skill, experiences
+    name, education, address, phone, graduate, experiences
   } = candidate;
 
-  return (
-    <>
-      <h1>{name}</h1>
-      <h1>{education}</h1>
-      <h1>{address}</h1>
-      <h1>{phone}</h1>
-      <h1>{skill}</h1>
-      <ul>
-        {experiences.map((experience) => (
-          <li>
-            Company:
-            {' '}
+  const renderExperience = () => {
+    const emptyExperience = experiences[0].company === '' && experiences[0].role === '' && experiences[0].start === '' && experiences[0].end === '';
+    if (emptyExperience) {
+      return <p>No Work Experience</p>;
+    }
+    return (
+      experiences.map((experience) => (
+        <li>
+          <p className="company">
             {experience.company}
+          </p>
+          Role:
+          {' '}
+          {experience.role}
+          <br />
+          {experience.start}
+          {' - '}
+          {experience.end}
+          , Duration:
+          {' '}
+          {parseInt(experience.end, 10) - parseInt(experience.start, 10)}
+          {' Years'}
+          <br />
+          <hr />
+          <br />
+        </li>
+      ))
+    );
+  };
+
+  return (
+    <div className="cv-paper-box">
+      <div className="cv-paper-content">
+        <div className="cv-paper-content-child">
+          <p className="sub-title">
+            Personal Record
+          </p>
+          <p>
+            {'Name: '}
             <br />
-            Role:
-            {' '}
-            {experience.role}
+            <strong>
+              {name}
+            </strong>
+          </p>
+          <p>
+            {'Education: '}
             <br />
-            {experience.start}
-            {' - '}
-            {experience.end}
+            <strong>
+              {education}
+            </strong>
+          </p>
+          <p>
+            {'Year graduate: '}
             <br />
-            Duration:
-            {' '}
-            {parseInt(experience.end, 10) - parseInt(experience.start, 10)}
-            {' Years'}
+            <strong>
+              {graduate}
+            </strong>
+
+          </p>
+          <p>
+            {'Address: '}
             <br />
-          </li>
-        ))}
-      </ul>
-    </>
+            <strong>
+              {address}
+            </strong>
+          </p>
+          <p>
+            {'Phone Number: '}
+            <br />
+            <strong>
+              {phone}
+            </strong>
+          </p>
+        </div>
+        <div className="cv-paper-content-child">
+          <p className="sub-title">
+            Work Experiences
+          </p>
+          <ul>
+            {renderExperience()}
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -45,7 +98,7 @@ CurriculumVitaePaper.propTypes = {
     education: PropTypes.string.isRequired,
     address: PropTypes.string.isRequired,
     phone: PropTypes.string.isRequired,
-    skill: PropTypes.string.isRequired,
+    graduate: PropTypes.string.isRequired,
     experiences: PropTypes.instanceOf(Array).isRequired
   }).isRequired
 };

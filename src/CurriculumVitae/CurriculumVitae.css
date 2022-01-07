@@ -1,5 +1,28 @@
-.cv-input-container{
-    display:grid;
+.cv-container{
+    margin: 0 100px;
+}
+
+.cv-container h3{
+    margin-top: 50px;
+}
+
+.cv-child-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+    margin-right: 20%;
+}
+
+.cv-input-container input[type=text] {
+  width: 90%;
+  color: aqua;
+  padding: 8px 8px;
+  margin: 10px 0;
+  display:grid;
+  border: 1px solid aqua;
+  background-color: rgb(31,31,31);
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .cv-button{
@@ -15,8 +38,71 @@
     transition: .2s;
 }
 
+.button-experience{
+    position: relative;
+    font-size: 20px;
+    right: 508px;
+    margin-left: 10px;
+    text-align: center;
+    border: 1px solid aqua;
+    float: left;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
 .cv-button:hover{
     background-color: aqua;
     color: rgb(31,31,31);
     transition: .2s;
+}
+
+.cv-paper-box{
+    margin-top: 50px;
+    border: 2px solid aqua;
+    width: 40%;
+    min-height: 500px;
+}
+
+.cv-paper-content{
+    display: grid;
+    grid-template-columns: .8fr 1.5fr;
+    grid-gap: 10px;
+}
+
+.cv-paper-content-child{
+    padding: 0px 10px;
+}
+
+.cv-paper-content-child:nth-child(1){
+    background-color: aqua;
+    min-height: 500px;
+    color: rgb(31,31,31);
+}
+
+.cv-paper-content-child:nth-child(2){
+    padding-right: 0px;
+}
+
+.cv-paper-content-child .sub-title{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.cv-paper-content-child ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.cv-paper-content-child hr{
+    width: 60%;
+    float: left;
+    border-color: aqua;
+}
+
+.cv-paper-content-child .company{
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 10px;
 }
