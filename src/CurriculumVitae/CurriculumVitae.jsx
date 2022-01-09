@@ -73,12 +73,9 @@ const CurriculumVitae = () => {
   };
 
   const handleSubmit = () => {
+    setEmptyBio(false);
     if (name === '' || address === '' || phone === '' || graduate === '') {
       setEmptyBio(true);
-    } else {
-      (
-        setEmptyBio(false)
-      );
     }
     setCandidate({
       name, education, phone, graduate, address, experiences
