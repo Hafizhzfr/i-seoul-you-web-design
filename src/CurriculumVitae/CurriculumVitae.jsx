@@ -53,7 +53,6 @@ const CurriculumVitae = () => {
 
   const disableAddButton = (index) => {
     const emptyCurrentForm = experiences[index].company === '' && experiences[index].role === '' && experiences[index].start === '' && experiences[index].end === '';
-    console.log('emptyCurrentForm :>> ', emptyCurrentForm);
     if (emptyCurrentForm) {
       setDisabledButton(true);
     }
@@ -92,10 +91,6 @@ const CurriculumVitae = () => {
     }
     return <CurriculumVitaePaper candidate={candidate} />;
   };
-
-  console.log('candidate :>> ', candidate);
-  console.log('experiences :>> ', experiences);
-  console.log('disabledButton :>> ', disabledButton);
 
   return (
     <div className="cv-container">
