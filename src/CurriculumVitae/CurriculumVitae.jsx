@@ -52,9 +52,10 @@ const CurriculumVitae = () => {
   };
 
   const disableAddButton = (index) => {
-    const emptyCurrentForm = experiences[index].company === '' && experiences[index].role === '' && experiences[index].start === '' && experiences[index].end === '';
+    const emptyCurrentForm = experiences[index].company === '' || experiences[index].role === '' || experiences[index].start === '' || experiences[index].end === '';
     if (emptyCurrentForm) {
       setDisabledButton(true);
+      return;
     }
     setDisabledButton(false);
   };
