@@ -1,21 +1,26 @@
 import { useState } from 'react';
 
 const ShoppingList = () => {
-  const [shoppingList, setShoppingList] = useState([]);
-
+  const [rawList, setRawList] = useState([]);
+  const [realList, setRealList] = useState([]);
   const [totalPrice, setTotalPrice] = useState('0');
 
   const handleClick = (event) => {
     const itemInput = event.target.name;
     const priceInput = event.target.value;
-    setShoppingList([...shoppingList, {
+    const theList = [...rawList, {
       itemInput, priceInput
-    }]);
+    }];
+    setRawList(theList);
+    setRealList(theList.filter((value, index, self) => index === self.findIndex((t) => (
+      t.place === value.place && t.name === value.name
+    ))));
     setTotalPrice(parseInt(totalPrice, 10) + parseInt(priceInput, 10));
   };
 
-  console.log('shoppingList :>> ', shoppingList);
+  console.log('shoppingList :>> ', rawList);
   console.log('totalPrice :>> ', totalPrice);
+  console.log('realList :>> ', realList);
 
   return (
     <div className="shopping-list-container">
