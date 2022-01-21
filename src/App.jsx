@@ -2,6 +2,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import ButtonTest from './ButtonTest/ButtonTest';
 import MathForm from './MathForm/MathForm';
 import CurriculumVitae from './CurriculumVitae/CurriculumVitae';
+import ShoppingList from './ShoppingList/ShoppingList';
 import './App.css';
 
 const App = () => (
@@ -11,6 +12,7 @@ const App = () => (
         <Link className="link-text" to="/math">CALCULATOR</Link>
         <Link className="link-text" to="/increments">INCREMENTS</Link>
         <Link className="link-text" to="/curriculum-vitae">CV GENERATOR</Link>
+        <Link className="link-text" to="/shopping-list">SHOPPING LIST</Link>
       </div>
     </nav>
 
@@ -18,6 +20,7 @@ const App = () => (
       <Route path="/increments" element={<ButtonTest />} />
       <Route path="/math" element={<MathForm />} />
       <Route path="/curriculum-vitae" element={<CurriculumVitae />} />
+      <Route path="/shopping-list" element={<ShoppingList />} />
     </Routes>
   </div>
 );
