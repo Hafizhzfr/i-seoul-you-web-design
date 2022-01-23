@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ShoppingItem from './ShoppingItem';
 
 const ShoppingList = () => {
   const [rawList, setRawList] = useState([]);
@@ -20,10 +21,6 @@ const ShoppingList = () => {
     return index === rawList.findIndex((obj) => JSON.stringify(obj) === _value);
   });
 
-  console.log('rawList :>> ', rawList);
-  console.log('realList :>> ', realList);
-  console.log('totalPrice :>> ', totalPrice);
-
   return (
     <div className="shopping-list-container">
       <h1>Click your desired item</h1>
@@ -32,6 +29,7 @@ const ShoppingList = () => {
       <button type="button" name="Grape" value="4" onClick={handleClick}>Grape, $4</button>
       <button type="button" name="Melon" value="10" onClick={handleClick}>Melon, $10</button>
       <button type="button" name="Durian" value="15" onClick={handleClick}>Durian, $15</button>
+      <ShoppingItem rawList={rawList} realList={realList} totalPrice={totalPrice} />
     </div>
   );
 };
