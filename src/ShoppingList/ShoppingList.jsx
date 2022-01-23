@@ -2,25 +2,27 @@ import { useState } from 'react';
 
 const ShoppingList = () => {
   const [rawList, setRawList] = useState([]);
-  const [realList, setRealList] = useState([]);
   const [totalPrice, setTotalPrice] = useState('0');
+  //   const [realList, setRealList] = useState([]);
 
   const handleClick = (event) => {
     const itemInput = event.target.name;
     const priceInput = event.target.value;
-    const theList = [...rawList, {
+    setRawList([...rawList, {
       itemInput, priceInput
-    }];
-    setRawList(theList);
-    setRealList(theList.filter((value, index, self) => index === self.findIndex((t) => (
-      t.place === value.place && t.name === value.name
-    ))));
+    }]);
     setTotalPrice(parseInt(totalPrice, 10) + parseInt(priceInput, 10));
   };
 
-  console.log('shoppingList :>> ', rawList);
-  console.log('totalPrice :>> ', totalPrice);
+  // REMOVE DUPLICATES
+  const realList = rawList.filter((value, index) => {
+    const _value = JSON.stringify(value);
+    return index === rawList.findIndex((obj) => JSON.stringify(obj) === _value);
+  });
+
+  console.log('rawList :>> ', rawList);
   console.log('realList :>> ', realList);
+  console.log('totalPrice :>> ', totalPrice);
 
   return (
     <div className="shopping-list-container">
