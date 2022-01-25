@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
+import './ShoppingList.css';
 
 const ShoppingItem = ({ rawList, realList, totalPrice }) => {
+  // COUNT OCCURENCES OF ELEMENT INSIDE AN ARRAY
   const countOccurences = (shoppingItem) => {
     let occurences = 0;
     for (let index = 0; index < rawList.length; index += 1) {
@@ -22,8 +24,9 @@ const ShoppingItem = ({ rawList, realList, totalPrice }) => {
           {'$'}
           {priceInput}
         </td>
-        {countOccurences(shoppingItem)}
-        <td />
+        <td>
+          {countOccurences(shoppingItem)}
+        </td>
       </tr>
     );
   });
@@ -31,20 +34,16 @@ const ShoppingItem = ({ rawList, realList, totalPrice }) => {
   return (
     <>
       <h2>Here is your shopping list</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>No</th>
-            <th>Item</th>
-            <th>Price</th>
-            <th>Quantity</th>
-          </tr>
-        </thead>
-        <tbody>
-          {renderTableData(realList)}
-        </tbody>
+      <table className="shopping-list">
+        <tr>
+          <th>No</th>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Quantity</th>
+        </tr>
+        {renderTableData(realList)}
       </table>
-      <p>
+      <p className="price-text">
         Total Price:
         {' $'}
         {totalPrice}
