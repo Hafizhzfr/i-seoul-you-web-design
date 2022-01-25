@@ -1,12 +1,19 @@
 import PropTypes from 'prop-types';
 
 const ShoppingItem = ({ rawList, realList, totalPrice }) => {
-  console.log('rawList :>> ', rawList);
-  console.log('realList :>> ', realList);
-  console.log('totalPrice :>> ', totalPrice);
+  const countOccurences = (shoppingItem) => {
+    let occurences = 0;
+    for (let index = 0; index < rawList.length; index += 1) {
+      const element = rawList[index].itemInput;
+      if (element === shoppingItem.itemInput) {
+        occurences += 1;
+      }
+    }
+    return occurences;
+  };
 
   const renderTableData = () => realList.map((shoppingItem, index) => {
-    const { itemInput, priceInput } = shoppingItem; // destructuring
+    const { itemInput, priceInput } = shoppingItem;
     return (
       <tr>
         <td>{index + 1}</td>
@@ -15,11 +22,12 @@ const ShoppingItem = ({ rawList, realList, totalPrice }) => {
           {'$'}
           {priceInput}
         </td>
-        {rawList.reduce((n, val) => n + (val === shoppingItem), 0)}
+        {countOccurences(shoppingItem)}
         <td />
       </tr>
     );
   });
+
   return (
     <>
       <h2>Here is your shopping list</h2>
@@ -38,7 +46,7 @@ const ShoppingItem = ({ rawList, realList, totalPrice }) => {
       </table>
       <p>
         Total Price:
-        {' '}
+        {' $'}
         {totalPrice}
       </p>
     </>

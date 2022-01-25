@@ -3,7 +3,7 @@ import ShoppingItem from './ShoppingItem';
 
 const ShoppingList = () => {
   const [rawList, setRawList] = useState([]);
-  const [totalPrice, setTotalPrice] = useState('0');
+  const [totalPrice, setTotalPrice] = useState(0);
   //   const [realList, setRealList] = useState([]);
 
   const handleClick = (event) => {
@@ -12,7 +12,7 @@ const ShoppingList = () => {
     setRawList([...rawList, {
       itemInput, priceInput
     }]);
-    setTotalPrice(parseInt(totalPrice, 10) + parseInt(priceInput, 10));
+    setTotalPrice(totalPrice + parseInt(priceInput, 10));
   };
 
   // REMOVE DUPLICATES
