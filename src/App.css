@@ -3,12 +3,12 @@ body {
 }
 
 .navbar{
-    background-color: rgb(56, 56, 56);
+    background-color: #222222;
     height: 45px;
 }
 
 .navbar .link-text{
-    color: aqua;
+    color: #ce96fb;
     text-decoration: none;
     font-size: 15px;
     font-weight: bold;
@@ -22,9 +22,9 @@ body {
 }
 
 .navbar .link-text:hover{
-    color: rgb(56, 56, 56);
+    color: #222222;
     font-weight: bold;
-    background-color: aqua;
+    background-color: #ce96fb;
     transition: .2s;
     
 }

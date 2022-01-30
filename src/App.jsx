@@ -1,17 +1,17 @@
 import { Routes, Route, Link } from 'react-router-dom';
-import ButtonTest from './ButtonTest/ButtonTest';
 import './App.css';
+import HomePage from './HomePage/HomePage';
 
 const App = () => (
   <div>
     <nav className="navbar">
       <div className="nav-text">
-        <Link className="link-text" to="/increments">INCREMENTS</Link>
+        <Link className="link-text" to="/">HOME</Link>
       </div>
     </nav>
 
     <Routes>
-      <Route path="/increments" element={<ButtonTest />} />
+      <Route path="/" element={<HomePage />} />
     </Routes>
   </div>
 );

@@ -1,0 +1,59 @@
+.home-page-container{
+height: max-content;
+}
+
+.first-content-container{
+  background-image: url(/src/pics/soojin-fix-pars.png);
+  height: 780px;
+  color: white;
+}
+
+.first-content{
+    position: absolute;
+    margin-top: 200px;
+    margin-left: 800px;
+}
+
+.first-content h1{
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.first-content ul li{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.first-content ul li:hover{
+    color: yellow;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.button-count{
+    text-align: center;
+    display:block;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    height: 35px;
+    width: 140px;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: .2s;
+}
+
+.button-count:hover{
+    background-color: #ce96fb;
+    border: 2px solid white;
+    color: white;
+    transition: .2s;
+}
+
+.first-content-container ul{
+    list-style: none;
+}
+
+.first-content-container ul li{
+    margin-left: -39px;
+}
