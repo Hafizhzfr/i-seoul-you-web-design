@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './HomePage.css';
+import HotSix from '../HotSix/HotSix';
 
 const HomePage = () => {
   const [isButtonPressed, setIsButtonPressed] = useState(false);
@@ -17,7 +18,7 @@ const HomePage = () => {
     }
     return (
       <ul>
-        <li>K-Pop Hot Six</li>
+        <li>Hot Six</li>
         <li>Block-K-Busters</li>
         <li>ShowBizz Papparazzi</li>
       </ul>
@@ -35,6 +36,7 @@ const HomePage = () => {
           {renderOtherContents()}
         </div>
       </div>
+      <HotSix />
     </div>
   );
 };
