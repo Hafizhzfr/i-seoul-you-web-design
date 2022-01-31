@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import gidlePics from '../pics/gidle-hwaa.png';
 import chungHaPics from '../pics/chungha-new.png';
 import yerinPics from '../pics/yerin.png';
@@ -7,6 +8,12 @@ import bibiPics from '../pics/bibi-theweekend.png';
 import './HotSix.css';
 
 const HotSix = () => {
+  const [buttonPressed, setButtonPressed] = useState(false);
+  const [pic, setPic] = useState('');
+  const [artist, setArtist] = useState('');
+  const [songs, setSongs] = useState([]);
+  const [title, setTitle] = useState('');
+
   const gidle = {
     pics: gidlePics,
     artist: '(G)I-DLE',
@@ -56,27 +63,50 @@ const HotSix = () => {
     ]
   };
   const hotSix = '//////  HOT SIX';
-
   const hotSixList = [gidle, bibi, yukika, eyedi, yerin, chungha];
+
+  const handleDetailClick = (picInput, artistInput, songsInput, titleInput) => {
+    setArtist(artistInput);
+    setPic(picInput);
+    setSongs(songsInput);
+    setTitle(titleInput);
+    setButtonPressed(false);
+    if (!buttonPressed) {
+      setButtonPressed(true);
+    }
+  };
+
   return (
     <div className="second-content">
       <h1>{hotSix}</h1>
       <div className="album-row">
         {hotSixList.map((album) => {
-          const { pics, artist, title } = album;
+          const {
+            pics: picsMenu, artist: artistMenu, title: titleMenu, songs: songsMenu
+          } = album;
           return (
             <div className="album-column">
-              <img className="album" src={pics} alt={artist} />
+              <img className="album" src={picsMenu} alt={artistMenu} />
               <div className="album-description">
-                <p className="album-detail">{artist}</p>
-                <p className="album-detail">{title}</p>
-                <button className="album-detail" type="button">
+                <p className="album-detail">{artistMenu}</p>
+                <p className="album-detail">{titleMenu}</p>
+                <button className="album-detail" type="button" onClick={() => handleDetailClick(picsMenu, artistMenu, songsMenu, titleMenu)}>
                   Check Details!
                 </button>
               </div>
             </div>
           );
         })}
+      </div>
+      <div className="popup-album-container">
+        <h1>{artist}</h1>
+        <h1>{title}</h1>
+        <img className="popup-album" src={pic} alt="popup-album" />
+        {songs.map((song) => (
+          <ul>
+            <li>{song}</li>
+          </ul>
+        ))}
       </div>
     </div>
   );
