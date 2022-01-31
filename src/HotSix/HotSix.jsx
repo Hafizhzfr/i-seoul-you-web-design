@@ -99,14 +99,16 @@ const HotSix = () => {
         })}
       </div>
       <div className="popup-album-container">
-        <h1>{artist}</h1>
-        <h1>{title}</h1>
         <img className="popup-album" src={pic} alt="popup-album" />
-        {songs.map((song) => (
-          <ul>
-            <li>{song}</li>
-          </ul>
-        ))}
+        <div className="popup-album-detail">
+          <h1>{artist}</h1>
+          <h2>{title}</h2>
+          {songs.map((song) => (
+            <ul>
+              <li>{song}</li>
+            </ul>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@
     height: 950px;
 }
 
-.second-content h1{
+.second-content > h1{
     background-color: #ce96fb;
     padding-left: 200px;
     position: relative;
@@ -99,4 +99,22 @@
     background-color: rgb(255, 255, 103);
     color: #222222;
     transition: .2s;
+}
+
+.popup-album-container{
+    position: absolute;
+    top: 100px;
+    left:220px;
+    height: 500px;
+    width: 1000px;
+    background-color: #222222;
+    border: 2px solid #ce96fb;
+    color: white;
+    display: flex;
+  justify-content: flex-start;
+  border-radius: 10px;
+}
+
+.popup-album-container > img{
+    padding: 10px;
 }
