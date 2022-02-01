@@ -5,6 +5,7 @@ body {
 .navbar{
     background-color: #222222;
     height: 45px;
+    width: 1440px;
 }
 
 .navbar .link-text{

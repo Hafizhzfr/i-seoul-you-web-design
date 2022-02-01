@@ -76,6 +76,31 @@ const HotSix = () => {
     }
   };
 
+  const handlePopupClick = () => {
+    setButtonPressed(false);
+  };
+
+  const renderAlbumDetail = () => {
+    if (buttonPressed) {
+      return (
+        <div className="popup-album-container">
+          <img className="popup-album" src={pic} alt="popup-album" />
+          <div className="popup-album-detail">
+            <h1>{artist}</h1>
+            <h2>{title}</h2>
+            {songs.map((song) => (
+              <ul className="songs-list">
+                <li>{song}</li>
+              </ul>
+            ))}
+          </div>
+          <button className="album-detail-button" type="button" onClick={handlePopupClick}>X</button>
+        </div>
+      );
+    }
+    return '';
+  };
+
   return (
     <div className="second-content">
       <h1>{hotSix}</h1>
@@ -98,18 +123,7 @@ const HotSix = () => {
           );
         })}
       </div>
-      <div className="popup-album-container">
-        <img className="popup-album" src={pic} alt="popup-album" />
-        <div className="popup-album-detail">
-          <h1>{artist}</h1>
-          <h2>{title}</h2>
-          {songs.map((song) => (
-            <ul>
-              <li>{song}</li>
-            </ul>
-          ))}
-        </div>
-      </div>
+      {renderAlbumDetail()}
     </div>
   );
 };
