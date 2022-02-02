@@ -1,18 +1,19 @@
 import { useState } from 'react';
 import gidlePics from '../pics/gidle-hwaa.png';
-import chungHaPics from '../pics/chungha-new.png';
+import secondYukikaPics from '../pics/yukika-timeabout.png';
 import yerinPics from '../pics/yerin.png';
 import eyediPics from '../pics/eyedi-cover.png';
 import yukikaPics from '../pics/yukika-soullady.png';
-import bibiPics from '../pics/bibi-theweekend.png';
+import bibiPics from '../pics/bibi-lifeisabi.png';
 import './HotSix.css';
 
 const HotSix = () => {
-  const [buttonPressed, setButtonPressed] = useState(false);
+  const [exitClicked, setExitClicked] = useState(false);
   const [pic, setPic] = useState('');
   const [artist, setArtist] = useState('');
   const [songs, setSongs] = useState([]);
   const [title, setTitle] = useState('');
+  const [spotify, setSpotify] = useState('');
 
   const gidle = {
     pics: gidlePics,
@@ -20,15 +21,17 @@ const HotSix = () => {
     title: 'I-Burn',
     songs: [
       'HANN (Lost in the winter)', 'HWAA', 'MOON', 'Where Is Love', 'LOST', 'DAHLIA'
-    ]
+    ],
+    spotifyLink: 'https://open.spotify.com/album/3ma5amx5s3l1NKoWNHaMYe'
   };
-  const chungha = {
-    pics: chungHaPics,
-    artist: 'Chung-Ha',
-    title: 'QUERENCIA',
+  const secondYukika = {
+    pics: secondYukikaPics,
+    artist: 'Yukika',
+    title: 'timeabout,',
     songs: [
-      'Stay Tonight', 'Bicycle', 'PLAY', 'Masquerade', 'Flying On Faith', 'Luce Sicut Stellae', 'Dream Of You', 'Bother Me', 'Chill', 'Lemon'
-    ]
+      'Leap forward', 'Insomnia', 'Love Month', 'TIME TRAVEL', 'Secret', 'PUNG!'
+    ],
+    spotifyLink: 'https://open.spotify.com/album/1cBAfX0otvkoIOI6HtOrAc'
   };
   const yerin = {
     pics: yerinPics,
@@ -36,15 +39,17 @@ const HotSix = () => {
     title: 'Love, Yerin',
     songs: [
       'Whenever', 'Antifreeze', 'Go Back', 'Why Me?', 'Limit', 'A Walk'
-    ]
+    ],
+    spotifyLink: 'https://open.spotify.com/album/2K41KAlW6n9bVlRCQPVcSZ'
   };
   const eyedi = {
     pics: eyediPics,
     artist: 'Eyedi',
     title: '&NEW',
     songs: [
-      '&NEW'
-    ]
+      '&NEW', 'Caffeine', 'J.us.T', 'Best Mistake - K', 'Luv Highway'
+    ],
+    spotifyLink: 'https://open.spotify.com/artist/48BSHaU3lXnM3pYHyeqLXN'
   };
   const yukika = {
     pics: yukikaPics,
@@ -52,36 +57,39 @@ const HotSix = () => {
     title: 'Soul Lady',
     songs: [
       'SOUL LADY', 'Neon', 'I FEEL LOVE', 'From HND to GMP', 'Yesterday', 'A Day for Love', 'pit-a-pet', 'NEON 1989', 'Cherries Jubiles', 'SHADE'
-    ]
+    ],
+    spotifyLink: 'https://open.spotify.com/album/16yrp3d9pCJgQK2RMBTtd1'
   };
   const bibi = {
     pics: bibiPics,
     artist: 'BiBi',
-    title: 'The Weekend',
+    title: 'Life is a Bi...',
     songs: [
-      'The Weekend'
-    ]
+      'Umm... Life', 'BAD SAD AND MAD', 'PIRI the dog', 'Birthday Cake', 'Life is a Bi...'
+    ],
+    spotifyLink: 'https://open.spotify.com/album/0VDb4oas0usbuPljrSZH5s'
   };
   const hotSix = '//////  HOT SIX';
-  const hotSixList = [gidle, bibi, yukika, eyedi, yerin, chungha];
+  const hotSixList = [gidle, bibi, yukika, eyedi, yerin, secondYukika];
 
-  const handleDetailClick = (picInput, artistInput, songsInput, titleInput) => {
+  const handleDetailClick = (picInput, artistInput, songsInput, titleInput, spotifyInput) => {
     setArtist(artistInput);
     setPic(picInput);
     setSongs(songsInput);
     setTitle(titleInput);
-    setButtonPressed(false);
-    if (!buttonPressed) {
-      setButtonPressed(true);
+    setSpotify(spotifyInput);
+    setExitClicked(false);
+    if (!exitClicked) {
+      setExitClicked(true);
     }
   };
 
-  const handlePopupClick = () => {
-    setButtonPressed(false);
+  const handleReturnClick = () => {
+    setExitClicked(false);
   };
 
   const renderAlbumDetail = () => {
-    if (buttonPressed) {
+    if (exitClicked) {
       return (
         <div className="popup-album-container">
           <img className="popup-album" src={pic} alt="popup-album" />
@@ -94,7 +102,8 @@ const HotSix = () => {
               </ul>
             ))}
           </div>
-          <button className="album-detail-button" type="button" onClick={handlePopupClick}>X</button>
+          <button className="album-detail-button" type="button" onClick={handleReturnClick}>X</button>
+          <button className="album-spotify-button" type="button"><a href={spotify}>Spotify</a></button>
         </div>
 
       );
@@ -108,7 +117,7 @@ const HotSix = () => {
       <div className="album-row">
         {hotSixList.map((album) => {
           const {
-            pics: picsMenu, artist: artistMenu, title: titleMenu, songs: songsMenu
+            pics: picsMenu, artist: artistMenu, title: titleMenu, songs: songsMenu, spotifyLink
           } = album;
           return (
             <div className="album-column">
@@ -116,7 +125,7 @@ const HotSix = () => {
               <div className="album-description">
                 <p className="album-detail">{artistMenu}</p>
                 <p className="album-detail">{titleMenu}</p>
-                <button className="album-detail" type="button" onClick={() => handleDetailClick(picsMenu, artistMenu, songsMenu, titleMenu)}>
+                <button className="album-detail" type="button" onClick={() => handleDetailClick(picsMenu, artistMenu, songsMenu, titleMenu, spotifyLink)}>
                   Check Details!
                 </button>
               </div>
