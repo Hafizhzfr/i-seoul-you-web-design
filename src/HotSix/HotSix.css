@@ -102,25 +102,34 @@
     transition: .2s;
 }
 
+
 .popup-album-container{
     position:fixed;
     top: 100px;
     left:220px;
     height: 490px;
     width: 1000px;
-    background-color: #222222;
+    background-color: #222222ed;
     border: 2px solid #ce96fb;
     color: white;
     display: grid;
     grid-template-columns: 480px 430px 100px;
     grid-gap: 20px;
   border-radius: 10px;
+  animation: album-detail-animation .3s 1;
 }
 
+@keyframes album-detail-animation {
+  from {opacity:0; top: 200px;}
+  to {opacity :1; top: 100px;}
+}
+
+
 .popup-album-container > img{
-    width: 90%;
-    height: 90%;
-    border: 2px solid #222222;
+    width: 450px;
+    height: 450px;
+    border-left: 2px solid #ff00f2;
+    border-bottom: 2px solid #ff00f2;
     border-radius: 10px;
     margin: auto;
 }
@@ -132,7 +141,7 @@
     padding-top: 5px;
     background: none;
     border: none;
-    color: #ce96fb;
+    color: #ddb3ff;
     font-size: 30px;
     cursor: pointer;
 }
@@ -144,20 +153,43 @@
 
 .popup-album-detail{
     margin-top: 10px;
-  color: yellow;
+}
+
+.popup-album-detail >h1{
+    font-size: 50px;
+    margin-bottom: 0px;
+    color: #ddb3ff;
+}
+
+.popup-album-detail >h2{
+    font-size: 25px;
+    padding-left: 5px;
+    padding-top: 5px;
+    margin-top: 0px;
+    color: #ddb3ff;
+}
+
+.popup-album-detail >p{
+    font-size: 20px;
+    padding-left: 5px;
+    padding-top: 15px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #ddb3ff;
 }
 
 .songs-list{
   list-style: none;
   text-align: left;
-  margin-left: 0px;
+  margin-left: -40px;
+  margin-top: 60px;
 }
 
 .songs-list > li {
     float: left;
     width: 50%;
     margin-bottom: 10px;
-  color: #ce96fb;
+  color: #ddb3ff;
 }
 
 .songs-list > li::after {
@@ -167,7 +199,7 @@
     width: 70%;
     margin-top: 10px;
     margin-bottom: 7px;
-    background: #ce96fb;
+    background: #ddb3ff;
 }
 
 .songs-list > li:hover::after {

@@ -96,6 +96,7 @@ const HotSix = () => {
           </div>
           <button className="album-detail-button" type="button" onClick={handlePopupClick}>X</button>
         </div>
+
       );
     }
     return '';
