@@ -96,6 +96,9 @@ const HotSix = () => {
           <div className="popup-album-detail">
             <h1>{artist}</h1>
             <h2>{title}</h2>
+            <a href={spotify} target="_blank" rel="noreferrer">
+              <button className="spotify-button" type="button">Listen on Spotify</button>
+            </a>
             {songs.map((song) => (
               <ul className="songs-list">
                 <li>{song}</li>
@@ -103,7 +106,6 @@ const HotSix = () => {
             ))}
           </div>
           <button className="album-detail-button" type="button" onClick={handleReturnClick}>X</button>
-          <button className="album-spotify-button" type="button"><a href={spotify}>Spotify</a></button>
         </div>
 
       );

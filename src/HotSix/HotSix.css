@@ -102,6 +102,10 @@
     transition: .2s;
 }
 
+@keyframes popup-album-container {
+  from {opacity:0; top: 200px;}
+  to {opacity :1; top: 100px;}
+}
 
 .popup-album-container{
     position:fixed;
@@ -118,12 +122,6 @@
   border-radius: 10px;
   animation: popup-album-container .3s 1;
 }
-
-@keyframes popup-album-container {
-  from {opacity:0; top: 200px;}
-  to {opacity :1; top: 100px;}
-}
-
 
 .popup-album-container > img{
     width: 450px;
@@ -182,7 +180,7 @@
   list-style: none;
   text-align: left;
   margin-left: -40px;
-  margin-top: 60px;
+  margin-top: 35px;
 }
 
 .songs-list > li {
@@ -190,6 +188,7 @@
     width: 50%;
     margin-bottom: 10px;
   color: #ddb3ff;
+  transition: .2s;
 }
 
 .songs-list > li::after {
@@ -200,6 +199,7 @@
     margin-top: 10px;
     margin-bottom: 7px;
     background: #ddb3ff;
+    transition: .2s;
 }
 
 .songs-list > li:hover::after {
@@ -217,4 +217,25 @@
     color: yellow;
     transition: .2s;
     cursor: pointer;
+}
+
+.spotify-button{
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+    background-color: transparent;
+    border: 2px solid #1DB954;
+    color: #1DB954;
+    height: 35px;
+    width: 144px;
+    border-radius: 15px;
+    transition: .2s;
+}
+
+.spotify-button:hover{
+    cursor: pointer;
+    background-color: #1DB954;
+    border: 2px solid #1DB954;
+    color: white;
+    transition: .2s;
 }
