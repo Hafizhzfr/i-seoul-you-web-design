@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-scroll';
 import './HomePage.css';
 import HotSix from '../HotSix/HotSix';
 
@@ -18,7 +19,11 @@ const HomePage = () => {
     }
     return (
       <ul>
-        <li>Hot Six</li>
+        <li>
+          <Link activeClass="active" to="hot-six" spy smooth offset={-70} duration={500}>
+            Hot Six
+          </Link>
+        </li>
         <li>Block-K-Busters</li>
         <li>ShowBizz Papparazzi</li>
       </ul>
@@ -36,7 +41,9 @@ const HomePage = () => {
           {renderOtherContents()}
         </div>
       </div>
-      <HotSix />
+      <div id="hot-six">
+        <HotSix />
+      </div>
     </div>
   );
 };
