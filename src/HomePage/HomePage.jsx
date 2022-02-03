@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-scroll';
 import './HomePage.css';
 import HotSix from '../HotSix/HotSix';
+import BlockBusters from '../BlockBusters/BlockBusters';
 
 const HomePage = () => {
   const [isButtonPressed, setIsButtonPressed] = useState(false);
@@ -20,11 +21,15 @@ const HomePage = () => {
     return (
       <ul>
         <li>
-          <Link activeClass="active" to="hot-six" spy smooth offset={-70} duration={500}>
+          <Link activeClass="active" to="hot-six" spy smooth offset={-10} duration={500}>
             Hot Six
           </Link>
         </li>
-        <li>Block-K-Busters</li>
+        <li>
+          <Link activeClass="active" to="block-busters" spy smooth offset={-10} duration={500}>
+            Bloc-K-Busters
+          </Link>
+        </li>
         <li>ShowBizz Papparazzi</li>
       </ul>
     );
@@ -43,6 +48,9 @@ const HomePage = () => {
       </div>
       <div id="hot-six">
         <HotSix />
+      </div>
+      <div id="block-busters">
+        <BlockBusters />
       </div>
     </div>
   );

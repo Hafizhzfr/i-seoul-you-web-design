@@ -114,8 +114,8 @@ const HotSix = () => {
   };
 
   return (
-    <div className="second-content">
-      <h1>{hotSix}</h1>
+    <>
+      <h1 className="hotsix-title">{hotSix}</h1>
       <div className="album-row">
         {hotSixList.map((album) => {
           const {
@@ -136,7 +136,7 @@ const HotSix = () => {
         })}
       </div>
       {renderAlbumDetail()}
-    </div>
+    </>
   );
 };
 

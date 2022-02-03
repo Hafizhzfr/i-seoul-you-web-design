@@ -4,14 +4,7 @@
     width: 400px;
 }
 
-.second-content{
-    position: absolute;
-    background-color: #222222;
-    height: 950px;
-    width: 1440px;
-}
-
-.second-content > h1{
+.hotsix-title{
     background-color: #ce96fb;
     padding-left: 200px;
     position: relative;

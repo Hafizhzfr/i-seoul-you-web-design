@@ -67,3 +67,18 @@ from {opacity:0; top: 150px;}
 .first-content-container ul li{
     margin-left: -39px;
 }
+
+#hot-six{
+    position: absolute;
+    background-color: #222222;
+    height: 950px;
+    width: 1440px;
+}
+
+#block-busters{
+    position: absolute;
+    top: 1775px;
+    background-color: #cc09f380;
+    height: 780px;
+    width: 1440px;
+}
