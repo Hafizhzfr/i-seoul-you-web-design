@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 import myNamePics from '../pics/myname.png';
 import hospitalPlaylistPics from '../pics/hospital-playlist.png';
 import silentSeaPics from '../pics/silentsea.png';
@@ -8,6 +9,7 @@ import obsPics from '../pics/ourbelovedsummer.png';
 import './BlockBusters.css';
 
 const BlockBusters = () => {
+  const [indexInput, setIndexInput] = useState(0);
   const myName = {
     pics: myNamePics,
     starring: 'Han So Hee, Ahn Bo-hyun, Park Hee Soon',
@@ -44,32 +46,41 @@ const BlockBusters = () => {
   };
 
   const blockBusters = [myName, hospitalPlaylist, silentSea, aouad, obs];
+  const nextEnabler = indexInput === blockBusters.length - 1;
+  const prevEnabler = indexInput === 0;
 
-  console.log('blockBusters :>> ', blockBusters);
+  const handleNext = () => {
+    setIndexInput(indexInput + 1);
+  };
+
+  const handlePrev = () => {
+    setIndexInput(indexInput - 1);
+  };
+
   return (
     <div className="third-content">
       <h1>BLOC-K-BUSTERS</h1>
       <div className="movie-detail">
-        <h2>Hospital Playlist</h2>
+        <a href={blockBusters[indexInput].netflixLink} target="_blank" rel="noreferrer">
+          <button className="netflix-button" type="button">Watch on Netflix</button>
+        </a>
+        <h2>{ blockBusters[indexInput].title}</h2>
         <p>
           {'Starring: '}
           <strong>
-            {hospitalPlaylist.starring}
+            {blockBusters[indexInput].starring}
           </strong>
         </p>
-        <a href={hospitalPlaylist.netflixLink} target="_blank" rel="noreferrer">
-          <button className="netflix-button" type="button">Watch on Netflix</button>
-        </a>
       </div>
       <div className="button-next-prev">
-        <button className="next-button" type="button">
+        <button disabled={prevEnabler} className="next-button" type="button" onClick={handlePrev}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
-        <button className="prev-button" type="button">
+        <button disabled={nextEnabler} className="prev-button" type="button" onClick={handleNext}>
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
-      <img src={hospitalPlaylistPics} alt="myName" />
+      <img src={blockBusters[indexInput].pics} alt="myName" />
     </div>
   );
 };
