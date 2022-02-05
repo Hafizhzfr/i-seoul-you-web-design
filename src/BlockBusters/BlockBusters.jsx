@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import myNamePics from '../pics/myname.png';
 import hospitalPlaylistPics from '../pics/hospital-playlist.png';
 import silentSeaPics from '../pics/silentsea.png';
@@ -42,6 +44,7 @@ const BlockBusters = () => {
   };
 
   const blockBusters = [myName, hospitalPlaylist, silentSea, aouad, obs];
+
   console.log('blockBusters :>> ', blockBusters);
   return (
     <div className="third-content">
@@ -58,9 +61,16 @@ const BlockBusters = () => {
           <button className="netflix-button" type="button">Watch on Netflix</button>
         </a>
       </div>
+      <div className="button-next-prev">
+        <button className="next-button" type="button">
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+        <button className="prev-button" type="button">
+          <FontAwesomeIcon icon={faChevronRight} />
+        </button>
+      </div>
       <img src={hospitalPlaylistPics} alt="myName" />
     </div>
   );
 };
-
 export default BlockBusters;

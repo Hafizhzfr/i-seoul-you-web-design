@@ -60,3 +60,30 @@
     color: white;
     transition: .2s;
 }
+
+.button-next-prev{
+    position: absolute;
+    height: 100px;
+    width: 40px;
+    top: 665px;
+    left: 558px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-next-prev > button{
+    margin: 0 50px;
+    height: 100px;
+    width: 100px;
+    font-size: 70px;
+    color: #ecd4ff;
+    background-color: transparent;
+    border-color: transparent;
+    transition: .5s;
+}
+
+.button-next-prev > button:hover{
+    cursor: pointer;
+    transition: .5s;
+    color: #eeff00;
+}
