@@ -82,3 +82,21 @@ from {opacity:0; top: 150px;}
     height: 780px;
     width: 1440px;
 }
+
+#contact-us{
+    position: absolute;
+    top: 2555px;
+    background-color: #1b1b1b;
+    border-top: 2px solid #ce96fb;
+    border-bottom: 2px solid #ce96fb;
+    height: 390px;
+    width: 1440px;
+}
+
+#credits{
+    position: absolute;
+    top: 2945px;
+    height: 35px;
+    width: 1440px;
+    background-color: #333333;
+}

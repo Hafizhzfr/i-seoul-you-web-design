@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-scroll';
-import './HomePage.css';
+import './MotherPage.css';
 import HotSix from '../HotSix/HotSix';
 import BlockBusters from '../BlockBusters/BlockBusters';
+import ContactUs from '../ContactUs/ContactUs';
+import Credits from '../Credits/Credits';
 
-const HomePage = () => {
+const MotherPage = () => {
   const [isButtonPressed, setIsButtonPressed] = useState(false);
 
   const onClickHandler = () => {
@@ -30,7 +32,11 @@ const HomePage = () => {
             Bloc-K-Busters
           </Link>
         </li>
-        <li>ShowBizz Papparazzi</li>
+        <li>
+          <Link activeClass="active" to="contact-us" spy smooth offset={-10} duration={500}>
+            Contact Us
+          </Link>
+        </li>
       </ul>
     );
   };
@@ -52,8 +58,14 @@ const HomePage = () => {
       <div id="block-busters">
         <BlockBusters />
       </div>
+      <div id="contact-us">
+        <ContactUs />
+      </div>
+      <div id="credits">
+        <Credits />
+      </div>
     </div>
   );
 };
 
-export default HomePage;
+export default MotherPage;

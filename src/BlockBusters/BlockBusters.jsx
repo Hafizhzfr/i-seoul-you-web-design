@@ -83,7 +83,7 @@ const BlockBusters = () => {
           <button className="netflix-button" type="button">Watch on Netflix</button>
         </a>
         <h2 style={{
-          transition: shouldTransition ? 'all .6s' : '',
+          transition: shouldTransition ? 'all .3s' : '',
           transform: `translateY(${translate}px)`,
           opacity: `${opacity}`
         }}
@@ -92,7 +92,7 @@ const BlockBusters = () => {
 
         </h2>
         <p style={{
-          transition: shouldTransition ? 'all .6s' : '',
+          transition: shouldTransition ? 'all .3s' : '',
           transform: `translateY(${translate}px)`,
           opacity: `${opacity}`
         }}
@@ -115,7 +115,7 @@ const BlockBusters = () => {
         src={blockBusters[indexInput].pics}
         alt={blockBusters[indexInput].title}
         style={{
-          transition: shouldTransition ? 'all 1.5s' : '',
+          transition: shouldTransition ? 'all .5s' : '',
           opacity: `${opacity}`
         }}
       />
