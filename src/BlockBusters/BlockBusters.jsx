@@ -47,6 +47,7 @@ const BlockBusters = () => {
 
   const [indexInput, setIndexInput] = useState(0);
   const [translate, setTranslate] = useState(100);
+  const [opacity, setOpacity] = useState(0);
   const [shouldTransition, setShouldTransition] = useState(true);
   const blockBusters = [myName, hospitalPlaylist, silentSea, aouad, obs];
   const nextEnabler = indexInput === blockBusters.length - 1;
@@ -56,18 +57,21 @@ const BlockBusters = () => {
     setIndexInput(indexInput + 1);
     setShouldTransition(false);
     setTranslate(100);
+    setOpacity(0);
   };
 
   const handlePrev = () => {
     setIndexInput(indexInput - 1);
     setShouldTransition(false);
     setTranslate(100);
+    setOpacity(0);
   };
 
   useEffect(() => {
     if (translate === 100) {
       setShouldTransition(true);
-      setTranslate(10);
+      setTranslate(0);
+      setOpacity(1);
     }
   }, [translate]);
 
@@ -79,16 +83,18 @@ const BlockBusters = () => {
           <button className="netflix-button" type="button">Watch on Netflix</button>
         </a>
         <h2 style={{
-          transition: shouldTransition ? 'all 0.5s' : '',
-          transform: `translateY(${translate}px)`
+          transition: shouldTransition ? 'all .6s' : '',
+          transform: `translateY(${translate}px)`,
+          opacity: `${opacity}`
         }}
         >
           { blockBusters[indexInput].title}
 
         </h2>
         <p style={{
-          transition: shouldTransition ? 'all 0.5s' : '',
-          transform: `translateY(${translate}px)`
+          transition: shouldTransition ? 'all .6s' : '',
+          transform: `translateY(${translate}px)`,
+          opacity: `${opacity}`
         }}
         >
           {'Starring: '}
@@ -105,7 +111,14 @@ const BlockBusters = () => {
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
-      <img src={blockBusters[indexInput].pics} alt="myName" />
+      <img
+        src={blockBusters[indexInput].pics}
+        alt={blockBusters[indexInput].title}
+        style={{
+          transition: shouldTransition ? 'all 1.5s' : '',
+          opacity: `${opacity}`
+        }}
+      />
     </div>
   );
 };

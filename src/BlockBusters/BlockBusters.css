@@ -5,6 +5,7 @@
 
 .third-content > h1{
     position: absolute;
+     z-index: 10;
     background-color: transparent;
     border: 2px solid #ce96fb;
     font-size: 60px;
@@ -20,7 +21,8 @@
 }
 
 .movie-detail{
-    position: absolute;
+ position: absolute;
+ z-index: 10;
     top: 200px;
     padding-left: 25px;
 }
@@ -63,6 +65,7 @@
 
 .button-next-prev{
     position: absolute;
+    z-index: 10;
     height: 100px;
     width: 40px;
     top: 665px;
