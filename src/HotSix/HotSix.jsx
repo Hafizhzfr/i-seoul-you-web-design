@@ -8,13 +8,6 @@ import bibiPics from '../pics/bibi-lifeisabi.png';
 import './HotSix.css';
 
 const HotSix = () => {
-  const [exitClicked, setExitClicked] = useState(false);
-  const [pic, setPic] = useState('');
-  const [artist, setArtist] = useState('');
-  const [songs, setSongs] = useState([]);
-  const [title, setTitle] = useState('');
-  const [spotify, setSpotify] = useState('');
-
   const gidle = {
     pics: gidlePics,
     artist: '(G)I-DLE',
@@ -69,6 +62,15 @@ const HotSix = () => {
     ],
     spotifyLink: 'https://open.spotify.com/album/0VDb4oas0usbuPljrSZH5s'
   };
+
+  /// ///////////////////////////////////////////////////////////////////////////////////////
+
+  const [exitClicked, setExitClicked] = useState(false);
+  const [pic, setPic] = useState('');
+  const [artist, setArtist] = useState('');
+  const [songs, setSongs] = useState([]);
+  const [title, setTitle] = useState('');
+  const [spotify, setSpotify] = useState('');
   const hotSix = '//////  HOT SIX';
   const hotSixList = [gidle, bibi, yukika, eyedi, yerin, secondYukika];
 
