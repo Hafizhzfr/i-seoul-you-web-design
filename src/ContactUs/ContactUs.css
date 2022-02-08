@@ -99,7 +99,7 @@
 }
 
 .app-form-control::placeholder {
-  color: #ce96fb;
+  color: #ce96fb5e;
   transition:.2s;
 }
 

@@ -7,9 +7,9 @@
     position: absolute;
      z-index: 10;
     background-color: transparent;
-    border: 2px solid #ce96fb;
+    border: 2px solid #fffc64;
     font-size: 60px;
-    color: #ce96fb;
+    color: #fffc64;
     border-left: transparent;
     padding: 20px 0px;
     padding-right: 180px;
@@ -30,7 +30,7 @@
 .movie-detail > h2{
     font-size: 100px;
     width: 618px;
-    color: #ecd4ff;
+    color: #fffead;
     margin-bottom: 0px;
     margin-top: 0px;
 }
@@ -38,7 +38,7 @@
 .movie-detail > p{
     font-size: 20px;
     width: 618px;
-    color: #ecd4ff;
+    color: #fffead;
     margin-bottom: 20px;
     text-align: left;
 }
@@ -80,7 +80,7 @@
     height: 100px;
     width: 100px;
     font-size: 70px;
-    color: #ecd4ff;
+    color: #fffc6485;
     background-color: transparent;
     border-color: transparent;
     transition: .5s;
@@ -89,5 +89,5 @@
 .button-next-prev > button:hover{
     cursor: pointer;
     transition: .5s;
-    color: #eeff00;
+    color: #fffc64;
 }
