@@ -150,7 +150,7 @@
 .popup-album-detail >h1{
     font-size: 50px;
     margin-bottom: 0px;
-    color: #fd5151;
+    color: #ffffff;
 }
 
 .popup-album-detail >h2{
@@ -158,7 +158,7 @@
     padding-left: 5px;
     padding-top: 5px;
     margin-top: 0px;
-    color: #fd5151;
+    color: #ffffff;
 }
 
 .popup-album-detail >p{
@@ -179,9 +179,10 @@
 
 .songs-list > li {
     float: left;
+    font-size: 15px;
     width: 50%;
     margin-bottom: 10px;
-  color: #fd5151;
+  color: #ffffff;
   transition: .2s;
 }
 
@@ -192,7 +193,7 @@
     width: 70%;
     margin-top: 10px;
     margin-bottom: 7px;
-    background: #ddb3ff;
+    background: #fd5151;
     transition: .2s;
 }
 

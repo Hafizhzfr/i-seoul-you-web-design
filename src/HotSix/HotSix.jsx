@@ -65,7 +65,7 @@ const HotSix = () => {
 
   /// ///////////////////////////////////////////////////////////////////////////////////////
 
-  const [exitClicked, setExitClicked] = useState(false);
+  const [exitClicked, setExitClicked] = useState(true);
   const [pic, setPic] = useState('');
   const [artist, setArtist] = useState('');
   const [songs, setSongs] = useState([]);
@@ -81,17 +81,14 @@ const HotSix = () => {
     setTitle(titleInput);
     setSpotify(spotifyInput);
     setExitClicked(false);
-    if (!exitClicked) {
-      setExitClicked(true);
-    }
   };
 
   const handleReturnClick = () => {
-    setExitClicked(false);
+    setExitClicked(true);
   };
 
   const renderAlbumDetail = () => {
-    if (exitClicked) {
+    if (!exitClicked) {
       return (
         <div className="popup-album-container">
           <img className="popup-album" src={pic} alt="popup-album" />
