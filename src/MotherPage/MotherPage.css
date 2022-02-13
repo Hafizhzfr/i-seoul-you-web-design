@@ -1,101 +1,108 @@
-.home-page-container{
-height: max-content;
-width: 1440px;
+.home-page-container {
+  height: max-content;
+  width: 1520px;
 }
 
-.first-content-container{
+.first-content-container {
   background-image: url(/src/pics/soojinbwfix.png);
   height: 780px;
+  width: 1520px;
   color: white;
 }
 
-.first-content{
-    position: absolute;
-    margin-top: 200px;
-    margin-left: 800px;
+.first-content {
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 800px;
 }
 
-.first-content h1{
-    font-size: 80px;
-    margin-bottom: 20px;
-    color: #ce96fb;
+.first-content h1 {
+  font-size: 80px;
+  margin-bottom: 20px;
+  color: #ce96fb;
 }
 
-.first-content ul li{
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: white;
+.first-content ul li {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: white;
 }
 
-.first-content ul li:hover{
-    color: yellow;
-    transition: .2s;
-    cursor: pointer;
+.first-content ul li:hover {
+  color: yellow;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
-.button-count{
-    text-align: center;
-    display:block;
-    background-color: transparent;
-    border: 2px solid #ce96fb;
-    color: #ce96fb;
-    height: 35px;
-    width: 140px;
-    border-radius: 5px;
-    font-size: 15px;
-    transition: .2s;
+.button-count {
+  text-align: center;
+  display: block;
+  background-color: transparent;
+  border: 2px solid #ce96fb;
+  color: #ce96fb;
+  height: 35px;
+  width: 140px;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: 0.2s;
 }
 
-.button-count:hover{
-    background-color: #ce96fb;
-    border: 2px solid white;
-    color: white;
-    transition: .2s;
+.button-count:hover {
+  background-color: #ce96fb;
+  border: 2px solid white;
+  color: white;
+  transition: 0.2s;
 }
 
-.first-content-container ul{
-    list-style: none;
-    position: absolute;
-    animation: list-down .3s 1;
+.first-content-container ul {
+  list-style: none;
+  position: absolute;
+  animation: list-down 0.3s 1;
 }
 
-@keyframes list-down{
-from {opacity:0; top: 150px;}
-  to {opacity :1; top: 200px;}
+@keyframes list-down {
+  from {
+    opacity: 0;
+    top: 150px;
+  }
+  to {
+    opacity: 1;
+    top: 200px;
+  }
 }
 
-.first-content-container ul li{
-    margin-left: -39px;
+.first-content-container ul li {
+  margin-left: -39px;
 }
 
-#hot-six{
-    position: absolute;
-    background-color: #222222;
-    height: 950px;
-    width: 1440px;
+#hot-six {
+  position: absolute;
+  background-color: #222222;
+  height: 950px;
+  width: 1520px;
 }
 
-#block-busters{
-    position: absolute;
-    top: 1775px;
-    background-color: #222222;
-    height: 780px;
-    width: 1440px;
+#block-busters {
+  position: absolute;
+  top: 1775px;
+  background-color: #222222;
+  height: 780px;
+  width: 1520px;
 }
 
-#contact-us{
-    position: absolute;
-    top: 2555px;
-    background-color: #1b1b1b;
-    border-top: 2px solid #ce96fb;
-    height: 390px;
-    width: 1440px;
+#contact-us {
+  position: absolute;
+  top: 2555px;
+  background-color: #1b1b1b;
+  border-top: 2px solid #ce96fb;
+  height: 390px;
+  width: 1520px;
 }
 
-#credits{
-    position: absolute;
-    top: 2945px;
-    height: 35px;
-    width: 1440px;
-    background-color: #333333;
+#credits {
+  position: absolute;
+  top: 2945px;
+  height: 35px;
+  width: 1520px;
+  background-color: #333333;
 }

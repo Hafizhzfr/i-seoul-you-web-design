@@ -1,32 +1,31 @@
 body {
-  font-family:'helvetica', sans-serif;
+  font-family: "helvetica", sans-serif;
   letter-spacing: 1px;
 }
 
-.navbar{
-    background-color: #222222;
-    height: 45px;
-    width: 1440px;
+.navbar {
+  background-color: #222222;
+  height: 45px;
+  width: 1520px;
 }
 
-.navbar .link-text{
-    color: #ce96fb;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: bold;
-    display: block;
-    float: right;
-    padding: 14px;
+.navbar .link-text {
+  color: #ce96fb;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  display: block;
+  float: right;
+  padding: 14px;
 }
 
-.navbar .nav-text{
-    margin-right: 20px;
+.navbar .nav-text {
+  margin-right: 20px;
 }
 
-.navbar .link-text:hover{
-    color: #222222;
-    font-weight: bold;
-    background-color: #ce96fb;
-    transition: .2s;
-    
+.navbar .link-text:hover {
+  color: #222222;
+  font-weight: bold;
+  background-color: #ce96fb;
+  transition: 0.2s;
 }
