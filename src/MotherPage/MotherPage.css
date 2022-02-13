@@ -1,12 +1,18 @@
+.home-page-container,
+.first-content-container,
+#hot-six,
+#block-busters,
+#contact-us,
+#credits {
+  width: 1519px;
+}
 .home-page-container {
   height: max-content;
-  width: 1520px;
 }
 
 .first-content-container {
   background-image: url(/src/pics/soojinbwfix.png);
   height: 780px;
-  width: 1520px;
   color: white;
 }
 
@@ -79,7 +85,6 @@
   position: absolute;
   background-color: #222222;
   height: 950px;
-  width: 1520px;
 }
 
 #block-busters {
@@ -87,7 +92,6 @@
   top: 1775px;
   background-color: #222222;
   height: 780px;
-  width: 1520px;
 }
 
 #contact-us {
@@ -96,13 +100,11 @@
   background-color: #1b1b1b;
   border-top: 2px solid #ce96fb;
   height: 390px;
-  width: 1520px;
 }
 
 #credits {
   position: absolute;
   top: 2945px;
   height: 35px;
-  width: 1520px;
   background-color: #333333;
 }
