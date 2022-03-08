@@ -12,8 +12,7 @@
         "LOST",
         "DAHLIA"
       ],
-      "spotifyLink": "https://open.spotify.com/album/3ma5amx5s3l1NKoWNHaMYe",
-      "pics" : "../pics/gidle-hwaa.png"
+      "spotifyLink": "https://open.spotify.com/album/3ma5amx5s3l1NKoWNHaMYe"
     },
     {
       "id":2,
@@ -26,8 +25,7 @@
         "Birthday Cake",
         "Life is a Bi..."
       ],
-      "spotifyLink": "https://open.spotify.com/album/0VDb4oas0usbuPljrSZH5s",
-      "pics" : "../pics/bibi-lifeisabi.png"
+      "spotifyLink": "https://open.spotify.com/album/0VDb4oas0usbuPljrSZH5s"
     },
     {
       "id":3,
@@ -41,8 +39,7 @@
       "Secret",
       "PUNG!"
       ],
-      "spotifyLink": "https://open.spotify.com/album/1cBAfX0otvkoIOI6HtOrAc",
-      "pics" : "../pics/yukika-timeabout.png"
+      "spotifyLink": "https://open.spotify.com/album/1cBAfX0otvkoIOI6HtOrAc"
     },
     {
       "id":4,
@@ -51,8 +48,7 @@
       "songs": [
         "Whenever", "Antifreeze", "Go Back", "Why Me?", "Limit", "A Walk"
       ],
-      "spotifyLink": "https://open.spotify.com/album/2K41KAlW6n9bVlRCQPVcSZ",
-      "pics" : "../pics/yerin.png"
+      "spotifyLink": "https://open.spotify.com/album/2K41KAlW6n9bVlRCQPVcSZ"
     },
     {
       "id":5,
@@ -61,8 +57,7 @@
       "songs": [
         "&NEW", "Caffeine", "J.us.T", "Best Mistake - K", "Luv Highway"
       ],
-      "spotifyLink": "https://open.spotify.com/artist/48BSHaU3lXnM3pYHyeqLXN",
-      "pics" : "../pics/eyedi-cover.png"
+      "spotifyLink": "https://open.spotify.com/artist/48BSHaU3lXnM3pYHyeqLXN"
     },
     {
       "id":6,
@@ -80,8 +75,86 @@
       "Cherries Jubiles",
       "SHADE"
       ],
-      "spotifyLink": "https://open.spotify.com/album/16yrp3d9pCJgQK2RMBTtd1",
-      "pics" : "../pics/yukika-soullady.png"
+      "spotifyLink": "https://open.spotify.com/album/16yrp3d9pCJgQK2RMBTtd1"
+    }
+  ],
+  "blockBusterList": [
+    {
+      "id":1,
+      "artist": "(G)I-DLE",
+      "title": "I-Burn",
+      "songs": [
+        "HANN (Lost in the winter)",
+        "HWAA",
+        "MOON",
+        "Where Is Love",
+        "LOST",
+        "DAHLIA"
+      ],
+      "spotifyLink": "https://open.spotify.com/album/3ma5amx5s3l1NKoWNHaMYe"
+    },
+    {
+      "id":2,
+      "artist": "BiBi",
+      "title": "Life is a Bi...",
+      "songs": [
+        "Umm... Life",
+        "BAD SAD AND MAD",
+        "PIRI the dog",
+        "Birthday Cake",
+        "Life is a Bi..."
+      ],
+      "spotifyLink": "https://open.spotify.com/album/0VDb4oas0usbuPljrSZH5s"
+    },
+    {
+      "id":3,
+      "artist": "Yukika",
+      "title": "timeabout,",
+      "songs": [
+        "Leap forward",
+      "Insomnia",
+      "Love Month",
+      "TIME TRAVEL",
+      "Secret",
+      "PUNG!"
+      ],
+      "spotifyLink": "https://open.spotify.com/album/1cBAfX0otvkoIOI6HtOrAc"
+    },
+    {
+      "id":4,
+      "artist": "Baek Yerin",
+      "title": "Love, Yerin",
+      "songs": [
+        "Whenever", "Antifreeze", "Go Back", "Why Me?", "Limit", "A Walk"
+      ],
+      "spotifyLink": "https://open.spotify.com/album/2K41KAlW6n9bVlRCQPVcSZ"
+    },
+    {
+      "id":5,
+      "artist": "Eyedi",
+      "title": "&NEW",
+      "songs": [
+        "&NEW", "Caffeine", "J.us.T", "Best Mistake - K", "Luv Highway"
+      ],
+      "spotifyLink": "https://open.spotify.com/artist/48BSHaU3lXnM3pYHyeqLXN"
+    },
+    {
+      "id":6,
+      "artist": "Yukika",
+      "title": "Soul Lady",
+      "songs": [
+        "SOUL LADY",
+      "Neon",
+      "I FEEL LOVE",
+      "From HND to GMP",
+      "Yesterday",
+      "A Day for Love",
+      "pit-a-pet",
+      "NEON 1989",
+      "Cherries Jubiles",
+      "SHADE"
+      ],
+      "spotifyLink": "https://open.spotify.com/album/16yrp3d9pCJgQK2RMBTtd1"
     }
   ]
 }

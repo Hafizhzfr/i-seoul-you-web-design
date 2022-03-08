@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './HotSix.css';
+import bibiPics from '../pics/bibi-lifeisabi.png';
+import eyediPics from '../pics/eyedi-cover.png';
+import gidlePics from '../pics/gidle-hwaa.png';
+import yerinPics from '../pics/yerin.png';
+import yukikaPics from '../pics/yukika-soullady.png';
+import secondYukikaPics from '../pics/yukika-timeabout.png';
 
 const HotSix = () => {
   const [exitClicked, setExitClicked] = useState(true);
@@ -11,6 +17,7 @@ const HotSix = () => {
   const [spotify, setSpotify] = useState('');
   const hotSix = '//////  HOT SIX';
   const [hotSixData, setHotSixData] = useState([]);
+  const hotSixPics = [gidlePics, bibiPics, secondYukikaPics, yerinPics, eyediPics, yukikaPics];
 
   const getHotSix = async () => {
     try {
@@ -24,8 +31,6 @@ const HotSix = () => {
   useEffect(() => {
     getHotSix();
   }, []);
-
-  console.log('hotSixData :>> ', hotSixData);
 
   const handleDetailClick = (
     picInput,
@@ -82,9 +87,8 @@ const HotSix = () => {
     <>
       <h1 className="hotsix-title">{hotSix}</h1>
       <div className="album-row">
-        {hotSixData.map((album) => {
+        {hotSixData.map((album, index) => {
           const {
-            pics: picsMenu,
             artist: artistMenu,
             title: titleMenu,
             songs: songsMenu,
@@ -92,7 +96,11 @@ const HotSix = () => {
           } = album;
           return (
             <div className="album-column">
-              <img className="album" src={picsMenu} alt={artistMenu} />
+              <img
+                className="album"
+                src={hotSixPics[index]}
+                alt={artistMenu}
+              />
               <div className="album-description">
                 <p className="album-detail">{artistMenu}</p>
                 <p className="album-detail">{titleMenu}</p>
@@ -100,7 +108,7 @@ const HotSix = () => {
                   className="album-detail"
                   type="button"
                   onClick={() => handleDetailClick(
-                    picsMenu,
+                    hotSixPics[index],
                     artistMenu,
                     songsMenu,
                     titleMenu,
