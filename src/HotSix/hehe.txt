@@ -1,0 +1,87 @@
+import bibiPics from '../pics/bibi-lifeisabi.png';
+import eyediPics from '../pics/eyedi-cover.png';
+import gidlePics from '../pics/gidle-hwaa.png';
+import yerinPics from '../pics/yerin.png';
+import yukikaPics from '../pics/yukika-soullady.png';
+import secondYukikaPics from '../pics/yukika-timeabout.png';
+
+
+
+
+
+
+const gidle = {
+    pics: gidlePics,
+    artist: '(G)I-DLE',
+    title: 'I-Burn',
+    songs: [
+      'HANN (Lost in the winter)',
+      'HWAA',
+      'MOON',
+      'Where Is Love',
+      'LOST',
+      'DAHLIA'
+    ],
+    spotifyLink: 'https://open.spotify.com/album/3ma5amx5s3l1NKoWNHaMYe'
+  };
+  const secondYukika = {
+    pics: secondYukikaPics,
+    artist: 'Yukika',
+    title: 'timeabout,',
+    songs: [
+      'Leap forward',
+      'Insomnia',
+      'Love Month',
+      'TIME TRAVEL',
+      'Secret',
+      'PUNG!'
+    ],
+    spotifyLink: 'https://open.spotify.com/album/1cBAfX0otvkoIOI6HtOrAc'
+  };
+  const yerin = {
+    pics: yerinPics,
+    artist: 'Baek Yerin',
+    title: 'Love, Yerin',
+    songs: ['Whenever', 'Antifreeze', 'Go Back', 'Why Me?', 'Limit', 'A Walk'],
+    spotifyLink: 'https://open.spotify.com/album/2K41KAlW6n9bVlRCQPVcSZ'
+  };
+  const eyedi = {
+    pics: eyediPics,
+    artist: 'Eyedi',
+    title: '&NEW',
+    songs: ['&NEW', 'Caffeine', 'J.us.T', 'Best Mistake - K', 'Luv Highway'],
+    spotifyLink: 'https://open.spotify.com/artist/48BSHaU3lXnM3pYHyeqLXN'
+  };
+  const yukika = {
+    pics: yukikaPics,
+    artist: 'Yukika',
+    title: 'Soul Lady',
+    songs: [
+      'SOUL LADY',
+      'Neon',
+      'I FEEL LOVE',
+      'From HND to GMP',
+      'Yesterday',
+      'A Day for Love',
+      'pit-a-pet',
+      'NEON 1989',
+      'Cherries Jubiles',
+      'SHADE'
+    ],
+    spotifyLink: 'https://open.spotify.com/album/16yrp3d9pCJgQK2RMBTtd1'
+  };
+  const bibi = {
+    pics: bibiPics,
+    artist: 'BiBi',
+    title: 'Life is a Bi...',
+    songs: [
+      'Umm... Life',
+      'BAD SAD AND MAD',
+      'PIRI the dog',
+      'Birthday Cake',
+      'Life is a Bi...'
+    ],
+    spotifyLink: 'https://open.spotify.com/album/0VDb4oas0usbuPljrSZH5s'
+  };
+
+const hotSixList = [gidle, bibi, yukika, eyedi, yerin, secondYukika];
