@@ -81,80 +81,33 @@
   "blockBusterList": [
     {
       "id":1,
-      "artist": "(G)I-DLE",
-      "title": "I-Burn",
-      "songs": [
-        "HANN (Lost in the winter)",
-        "HWAA",
-        "MOON",
-        "Where Is Love",
-        "LOST",
-        "DAHLIA"
-      ],
-      "spotifyLink": "https://open.spotify.com/album/3ma5amx5s3l1NKoWNHaMYe"
+      "title": "The Silent Sea",
+      "starring": "Bae Doona, Gong Yoo",
+      "netflixLink": "https://www.netflix.com/id-en/title/81098012"
     },
     {
       "id":2,
-      "artist": "BiBi",
-      "title": "Life is a Bi...",
-      "songs": [
-        "Umm... Life",
-        "BAD SAD AND MAD",
-        "PIRI the dog",
-        "Birthday Cake",
-        "Life is a Bi..."
-      ],
-      "spotifyLink": "https://open.spotify.com/album/0VDb4oas0usbuPljrSZH5s"
+      "title": "All of Us Are Dead",
+      "starring": "Park Solomon, Lee Yoo-Mi, Cho Yi-hyun",
+      "netflixLink": "https://www.netflix.com/id/title/81237994"
     },
     {
       "id":3,
-      "artist": "Yukika",
-      "title": "timeabout,",
-      "songs": [
-        "Leap forward",
-      "Insomnia",
-      "Love Month",
-      "TIME TRAVEL",
-      "Secret",
-      "PUNG!"
-      ],
-      "spotifyLink": "https://open.spotify.com/album/1cBAfX0otvkoIOI6HtOrAc"
+      "title": "Our Beloved Summer",
+      "starring": "Kim Da-mi, Choi Woo-shik",
+      "netflixLink": "https://www.netflix.com/id-en/title/81486372"
     },
     {
       "id":4,
-      "artist": "Baek Yerin",
-      "title": "Love, Yerin",
-      "songs": [
-        "Whenever", "Antifreeze", "Go Back", "Why Me?", "Limit", "A Walk"
-      ],
-      "spotifyLink": "https://open.spotify.com/album/2K41KAlW6n9bVlRCQPVcSZ"
+      "title": "My Name",
+      "starring": "Han So Hee, Ahn Bo-hyun, Park Hee Soon",
+      "netflixLink": "https://www.netflix.com/id-en/title/81011211"
     },
     {
       "id":5,
-      "artist": "Eyedi",
-      "title": "&NEW",
-      "songs": [
-        "&NEW", "Caffeine", "J.us.T", "Best Mistake - K", "Luv Highway"
-      ],
-      "spotifyLink": "https://open.spotify.com/artist/48BSHaU3lXnM3pYHyeqLXN"
-    },
-    {
-      "id":6,
-      "artist": "Yukika",
-      "title": "Soul Lady",
-      "songs": [
-        "SOUL LADY",
-      "Neon",
-      "I FEEL LOVE",
-      "From HND to GMP",
-      "Yesterday",
-      "A Day for Love",
-      "pit-a-pet",
-      "NEON 1989",
-      "Cherries Jubiles",
-      "SHADE"
-      ],
-      "spotifyLink": "https://open.spotify.com/album/16yrp3d9pCJgQK2RMBTtd1"
+      "title": "Hospital Playlist",
+      "starring": "Jo Jun-Suk, Jeon Mi-do, Ahn Eun-jin",
+      "netflixLink": "https://www.netflix.com/id-en/title/81239224"
     }
   ]
 }

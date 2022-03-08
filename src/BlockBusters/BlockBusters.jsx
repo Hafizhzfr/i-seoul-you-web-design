@@ -1,6 +1,7 @@
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { useState, useEffect } from 'react';
 import myNamePics from '../pics/myname.png';
 import hospitalPlaylistPics from '../pics/hospital-playlist.png';
 import silentSeaPics from '../pics/silentsea.png';
@@ -49,9 +50,26 @@ const BlockBusters = () => {
   const [translate, setTranslate] = useState(100);
   const [opacity, setOpacity] = useState(0);
   const [shouldTransition, setShouldTransition] = useState(true);
+  const [blockBustersData, setBlockBustersData] = useState([]);
   const blockBusters = [myName, hospitalPlaylist, silentSea, aouad, obs];
   const nextEnabler = indexInput === blockBusters.length - 1;
   const prevEnabler = indexInput === 0;
+
+  const getBlockBusters = async () => {
+    try {
+      const { data } = await axios.get('http://localhost:3001/blockBusterList');
+      setBlockBustersData(data);
+    } catch (err) {
+      console.log('err');
+    }
+  };
+
+  useEffect(() => {
+    getBlockBusters();
+  }, []);
+
+  console.log('blockBustersData', blockBustersData);
+  console.log('blockBustersList', blockBusters);
 
   const handleNext = () => {
     setIndexInput(indexInput + 1);
